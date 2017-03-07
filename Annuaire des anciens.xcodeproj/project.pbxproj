@@ -12,6 +12,10 @@
 		3F9E5D861E6D933300FE67BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F9E5D841E6D933300FE67BB /* Main.storyboard */; };
 		3F9E5D881E6D933300FE67BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F9E5D871E6D933300FE67BB /* Assets.xcassets */; };
 		3F9E5D8B1E6D933300FE67BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F9E5D891E6D933300FE67BB /* LaunchScreen.storyboard */; };
+		3F9E5D931E6D935600FE67BB /* Eleve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E5D921E6D935600FE67BB /* Eleve.swift */; };
+		3F9E5D961E6D939A00FE67BB /* Entreprise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E5D951E6D939A00FE67BB /* Entreprise.swift */; };
+		3F9E5D981E6D93AB00FE67BB /* Promotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E5D971E6D93AB00FE67BB /* Promotion.swift */; };
+		3FD611441E6DE2F000269590 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD611431E6DE2F000269590 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		3F9E5D871E6D933300FE67BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F9E5D8A1E6D933300FE67BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F9E5D8C1E6D933300FE67BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F9E5D921E6D935600FE67BB /* Eleve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Eleve.swift; sourceTree = "<group>"; };
+		3F9E5D951E6D939A00FE67BB /* Entreprise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entreprise.swift; sourceTree = "<group>"; };
+		3F9E5D971E6D93AB00FE67BB /* Promotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promotion.swift; sourceTree = "<group>"; };
+		3FD611431E6DE2F000269590 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,26 @@
 		3F9E5D7F1E6D933300FE67BB /* Annuaire des anciens */ = {
 			isa = PBXGroup;
 			children = (
+				3F9E5D941E6D937900FE67BB /* Model */,
 				3F9E5D801E6D933300FE67BB /* AppDelegate.swift */,
 				3F9E5D821E6D933300FE67BB /* ViewController.swift */,
 				3F9E5D841E6D933300FE67BB /* Main.storyboard */,
 				3F9E5D871E6D933300FE67BB /* Assets.xcassets */,
 				3F9E5D891E6D933300FE67BB /* LaunchScreen.storyboard */,
 				3F9E5D8C1E6D933300FE67BB /* Info.plist */,
+				3FD611431E6DE2F000269590 /* TableViewCell.swift */,
 			);
 			path = "Annuaire des anciens";
+			sourceTree = "<group>";
+		};
+		3F9E5D941E6D937900FE67BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3F9E5D921E6D935600FE67BB /* Eleve.swift */,
+				3F9E5D951E6D939A00FE67BB /* Entreprise.swift */,
+				3F9E5D971E6D93AB00FE67BB /* Promotion.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +156,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F9E5D961E6D939A00FE67BB /* Entreprise.swift in Sources */,
 				3F9E5D831E6D933300FE67BB /* ViewController.swift in Sources */,
+				3F9E5D981E6D93AB00FE67BB /* Promotion.swift in Sources */,
 				3F9E5D811E6D933300FE67BB /* AppDelegate.swift in Sources */,
+				3FD611441E6DE2F000269590 /* TableViewCell.swift in Sources */,
+				3F9E5D931E6D935600FE67BB /* Eleve.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +323,7 @@
 				3F9E5D911E6D933300FE67BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

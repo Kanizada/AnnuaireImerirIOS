@@ -7,6 +7,13 @@
 //
 
 import UIKit
+import SwiftyJSON
+
+struct URLS {
+    static let elevesList = "http://vps366535.ovh.net/eleves/list"
+    static let entreprisesList = "http://vps366535.ovh.net/entreprises/list"
+    static let promotionsList = "http://vps366535.ovh.net/promotions/list"
+}
 
 class TableViewController: UITableViewController {
     
@@ -15,7 +22,17 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
+        loadDatas()
+        
     }
+    
+    func loadDatas(){
+        dataSource.loadDatas()
+    }
+    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class DataSource: NSObject {
     
+    var url: String { return "" }
     var count: Int { return 0 }
     
     func layout(cell: UITableViewCell, indexPath: IndexPath) {
         
     }
+    
+    func loadDatas() {}
+    
+    func parseDatas(json: JSON) {}
 
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class Eleve {
     var key : String = "001"
@@ -39,8 +40,17 @@ class Eleve {
     var code_postal : String = "66000"
     //Postal code of student
     
-    func initEleve (){
+    func construct(datas: JSON){
         //TODO with JSON
+        self.nom = datas["nom"].stringValue
+        self.prenom = datas["prenom"].stringValue
+        self.email = datas["email"].stringValue
+        self.date_inscription = datas["date_inscription"].stringValue
+        self.telephone_mobile = datas["telephone_mobile"].stringValue
+        self.telephone_perso = datas["telephone_fixe"].stringValue
+        self.site_web = datas["site_web"].stringValue
+        self.adresse = datas["adresse"].stringValue
+        self.code_postal = datas["code_postal"].stringValue
     }
     
 }

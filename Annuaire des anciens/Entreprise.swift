@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftyJSON
+
 
 class Entreprise {
     var id : Int = 1
@@ -15,4 +17,13 @@ class Entreprise {
     var code_postal : String = "66000"
     var telephone : String = "00000000"
     var email : String = "contact@google.com"
+    
+    func construct(datas: JSON){
+        //TODO with JSON
+        self.nom = datas["nom"].stringValue
+        self.adresse = datas["adresse"].stringValue
+        self.email = datas["email"].stringValue
+        self.adresse = datas["adresse"].stringValue
+        self.code_postal = datas["code_postal"].stringValue
+    }
 }

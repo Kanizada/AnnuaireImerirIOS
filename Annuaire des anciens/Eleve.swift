@@ -6,9 +6,9 @@
 //  Copyright © 2017 Student. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class Eleve: DataString {
+class Eleve {
     var key : String = "001"
     //API key of the user
     
@@ -41,10 +41,6 @@ class Eleve: DataString {
     
     func initEleve (){
         //TODO with JSON
-    }
-    
-    func getString() -> String {
-        return self.nom
     }
     
 }

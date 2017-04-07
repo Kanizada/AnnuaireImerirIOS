@@ -42,5 +42,7 @@ class DSEleves: DataSource{
             eleves.append(neweleve)
         }
     }
+	
+	static let sharedEleve = DSEleves()
     
 }

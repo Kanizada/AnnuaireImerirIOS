@@ -31,7 +31,7 @@ class TableViewController: UITableViewController {
     func loadDatas(){
         dataSource.loadDatas()
     }
-    
+	
 
 
     override func didReceiveMemoryWarning() {
@@ -42,13 +42,23 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
+		
         dataSource.layout(cell: cell, indexPath: indexPath)
+		
         return cell
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.count
     }
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let dest = segue.destination as? ShowDetailEleveViewController {
+			let dsEleves = dataSource as! DSEleves
+			let eleve = dsEleves.eleves[tableView.indexPathForSelectedRow!.row]
+			dest.eleve = eleve
+		}
+	}
 }
+
 

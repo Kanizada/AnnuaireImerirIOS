@@ -21,5 +21,5 @@ class DataSource: NSObject {
     func loadDatas() {}
     
     func parseDatas(json: JSON) {}
-
+	
 }

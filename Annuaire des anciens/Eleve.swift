@@ -39,6 +39,8 @@ class Eleve {
     
     var code_postal : String = "66000"
     //Postal code of student
+	
+	var promotion: String = "Goa"
     
     func construct(datas: JSON){
         //TODO with JSON
@@ -51,6 +53,7 @@ class Eleve {
         self.site_web = datas["site_web"].stringValue
         self.adresse = datas["adresse"].stringValue
         self.code_postal = datas["code_postal"].stringValue
+		self.promotion = datas["promotion"].stringValue
     }
-    
+	
 }

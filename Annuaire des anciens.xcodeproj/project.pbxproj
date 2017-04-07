@@ -18,6 +18,8 @@
 		3F9E5D931E6D935600FE67BB /* Eleve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E5D921E6D935600FE67BB /* Eleve.swift */; };
 		3F9E5D961E6D939A00FE67BB /* Entreprise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E5D951E6D939A00FE67BB /* Entreprise.swift */; };
 		3F9E5D981E6D93AB00FE67BB /* Promotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E5D971E6D93AB00FE67BB /* Promotion.swift */; };
+		3FFE56491E768A3F00F00166 /* 15333654-Nuage-de-bulle-avec-la-foudre-Illustration-sur-fond-blanc-Banque-d'images.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FFE56481E768A3F00F00166 /* 15333654-Nuage-de-bulle-avec-la-foudre-Illustration-sur-fond-blanc-Banque-d'images.jpg */; };
+		3FFE564C1E768E3600F00166 /* ShowEleveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE564B1E768E3600F00166 /* ShowEleveViewController.swift */; };
 		7755BB731E71BD5000644A44 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7755BB721E71BD5000644A44 /* SwiftyJSON.framework */; };
 		7755BB741E71BD5000644A44 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7755BB721E71BD5000644A44 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -50,6 +52,8 @@
 		3F9E5D921E6D935600FE67BB /* Eleve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Eleve.swift; sourceTree = "<group>"; };
 		3F9E5D951E6D939A00FE67BB /* Entreprise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entreprise.swift; sourceTree = "<group>"; };
 		3F9E5D971E6D93AB00FE67BB /* Promotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promotion.swift; sourceTree = "<group>"; };
+		3FFE56481E768A3F00F00166 /* 15333654-Nuage-de-bulle-avec-la-foudre-Illustration-sur-fond-blanc-Banque-d'images.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "15333654-Nuage-de-bulle-avec-la-foudre-Illustration-sur-fond-blanc-Banque-d'images.jpg"; path = "../../../../../Downloads/15333654-Nuage-de-bulle-avec-la-foudre-Illustration-sur-fond-blanc-Banque-d'images.jpg"; sourceTree = "<group>"; };
+		3FFE564B1E768E3600F00166 /* ShowEleveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowEleveViewController.swift; sourceTree = "<group>"; };
 		7755BB721E71BD5000644A44 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +89,7 @@
 		3F6E1C781E6F34FD007EE65C /* ViewControler */ = {
 			isa = PBXGroup;
 			children = (
+				3FFE564B1E768E3600F00166 /* ShowEleveViewController.swift */,
 				3F9E5D821E6D933300FE67BB /* TableViewController.swift */,
 			);
 			name = ViewControler;
@@ -93,6 +98,7 @@
 		3F9E5D741E6D933300FE67BB = {
 			isa = PBXGroup;
 			children = (
+				3FFE564A1E768A4800F00166 /* Images */,
 				7755BB721E71BD5000644A44 /* SwiftyJSON.framework */,
 				3F9E5D7F1E6D933300FE67BB /* Annuaire des anciens */,
 				3F9E5D7E1E6D933300FE67BB /* Products */,
@@ -131,6 +137,14 @@
 				3F9E5D971E6D93AB00FE67BB /* Promotion.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		3FFE564A1E768A4800F00166 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3FFE56481E768A3F00F00166 /* 15333654-Nuage-de-bulle-avec-la-foudre-Illustration-sur-fond-blanc-Banque-d'images.jpg */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F9E5D8B1E6D933300FE67BB /* LaunchScreen.storyboard in Resources */,
+				3FFE56491E768A3F00F00166 /* 15333654-Nuage-de-bulle-avec-la-foudre-Illustration-sur-fond-blanc-Banque-d'images.jpg in Resources */,
 				3F9E5D881E6D933300FE67BB /* Assets.xcassets in Resources */,
 				3F9E5D861E6D933300FE67BB /* Main.storyboard in Resources */,
 			);
@@ -210,6 +225,7 @@
 				3F6E1C471E6F2F19007EE65C /* DataSourceProtocol.swift in Sources */,
 				3F6E1C421E6F2ECC007EE65C /* DSEntreprises.swift in Sources */,
 				3F9E5D961E6D939A00FE67BB /* Entreprise.swift in Sources */,
+				3FFE564C1E768E3600F00166 /* ShowEleveViewController.swift in Sources */,
 				3F9E5D831E6D933300FE67BB /* TableViewController.swift in Sources */,
 				3F9E5D981E6D93AB00FE67BB /* Promotion.swift in Sources */,
 				3F6E1C401E6F2EA2007EE65C /* DSEleves.swift in Sources */,

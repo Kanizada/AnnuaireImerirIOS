@@ -23,7 +23,19 @@ class Entreprise {
         self.nom = datas["nom"].stringValue
         self.adresse = datas["adresse"].stringValue
         self.email = datas["email"].stringValue
-        self.adresse = datas["adresse"].stringValue
+        self.telephone = datas["telephone"].stringValue
         self.code_postal = datas["code_postal"].stringValue
     }
+	
+	func getArray()->[[String]]{
+		var entreprise: [[String]] = []
+		entreprise.append([self.nom])
+		entreprise.append([self.adresse])
+		entreprise.append([self.code_postal])
+		entreprise.append([self.telephone])
+		entreprise.append([self.email])
+		//Pour les eleves
+		//entreprise.append(contentOf: entreprise.eleves)
+		return entreprise
+	}
 }

@@ -18,10 +18,11 @@
 		3F9E5D931E6D935600FE67BB /* Eleve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E5D921E6D935600FE67BB /* Eleve.swift */; };
 		3F9E5D961E6D939A00FE67BB /* Entreprise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E5D951E6D939A00FE67BB /* Entreprise.swift */; };
 		3F9E5D981E6D93AB00FE67BB /* Promotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E5D971E6D93AB00FE67BB /* Promotion.swift */; };
+		3FA8238B1E97E6630087F5E9 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA8238A1E97E6630087F5E9 /* SwiftyJSON.framework */; };
+		3FA8238C1E97E6630087F5E9 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA8238A1E97E6630087F5E9 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3FA823901EB3AE940087F5E9 /* EntrepriseDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA8238F1EB3AE940087F5E9 /* EntrepriseDetailTableViewController.swift */; };
 		3FFE56491E768A3F00F00166 /* 15333654-Nuage-de-bulle-avec-la-foudre-Illustration-sur-fond-blanc-Banque-d'images.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FFE56481E768A3F00F00166 /* 15333654-Nuage-de-bulle-avec-la-foudre-Illustration-sur-fond-blanc-Banque-d'images.jpg */; };
 		3FFE564C1E768E3600F00166 /* ShowEleveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE564B1E768E3600F00166 /* ShowEleveViewController.swift */; };
-		7755BB731E71BD5000644A44 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7755BB721E71BD5000644A44 /* SwiftyJSON.framework */; };
-		7755BB741E71BD5000644A44 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7755BB721E71BD5000644A44 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,7 +32,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7755BB741E71BD5000644A44 /* SwiftyJSON.framework in Embed Frameworks */,
+				3FA8238C1E97E6630087F5E9 /* SwiftyJSON.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,9 +53,10 @@
 		3F9E5D921E6D935600FE67BB /* Eleve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Eleve.swift; sourceTree = "<group>"; };
 		3F9E5D951E6D939A00FE67BB /* Entreprise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entreprise.swift; sourceTree = "<group>"; };
 		3F9E5D971E6D93AB00FE67BB /* Promotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promotion.swift; sourceTree = "<group>"; };
+		3FA8238A1E97E6630087F5E9 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		3FA8238F1EB3AE940087F5E9 /* EntrepriseDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntrepriseDetailTableViewController.swift; sourceTree = "<group>"; };
 		3FFE56481E768A3F00F00166 /* 15333654-Nuage-de-bulle-avec-la-foudre-Illustration-sur-fond-blanc-Banque-d'images.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "15333654-Nuage-de-bulle-avec-la-foudre-Illustration-sur-fond-blanc-Banque-d'images.jpg"; path = "../../../../../Downloads/15333654-Nuage-de-bulle-avec-la-foudre-Illustration-sur-fond-blanc-Banque-d'images.jpg"; sourceTree = "<group>"; };
 		3FFE564B1E768E3600F00166 /* ShowEleveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowEleveViewController.swift; sourceTree = "<group>"; };
-		7755BB721E71BD5000644A44 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7755BB731E71BD5000644A44 /* SwiftyJSON.framework in Frameworks */,
+				3FA8238B1E97E6630087F5E9 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +93,7 @@
 			children = (
 				3FFE564B1E768E3600F00166 /* ShowEleveViewController.swift */,
 				3F9E5D821E6D933300FE67BB /* TableViewController.swift */,
+				3FA8238F1EB3AE940087F5E9 /* EntrepriseDetailTableViewController.swift */,
 			);
 			name = ViewControler;
 			sourceTree = "<group>";
@@ -98,8 +101,8 @@
 		3F9E5D741E6D933300FE67BB = {
 			isa = PBXGroup;
 			children = (
+				3FA8238A1E97E6630087F5E9 /* SwiftyJSON.framework */,
 				3FFE564A1E768A4800F00166 /* Images */,
-				7755BB721E71BD5000644A44 /* SwiftyJSON.framework */,
 				3F9E5D7F1E6D933300FE67BB /* Annuaire des anciens */,
 				3F9E5D7E1E6D933300FE67BB /* Products */,
 			);
@@ -175,7 +178,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Student;
 				TargetAttributes = {
 					3F9E5D7C1E6D933300FE67BB = {
@@ -225,6 +228,7 @@
 				3F6E1C471E6F2F19007EE65C /* DataSourceProtocol.swift in Sources */,
 				3F6E1C421E6F2ECC007EE65C /* DSEntreprises.swift in Sources */,
 				3F9E5D961E6D939A00FE67BB /* Entreprise.swift in Sources */,
+				3FA823901EB3AE940087F5E9 /* EntrepriseDetailTableViewController.swift in Sources */,
 				3FFE564C1E768E3600F00166 /* ShowEleveViewController.swift in Sources */,
 				3F9E5D831E6D933300FE67BB /* TableViewController.swift in Sources */,
 				3F9E5D981E6D93AB00FE67BB /* Promotion.swift in Sources */,
@@ -274,6 +278,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -324,6 +329,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

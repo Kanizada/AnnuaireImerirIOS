@@ -25,18 +25,20 @@ class ShowDetailEleveViewController: UIViewController {
 	@IBOutlet weak var PromotionValeurLabel : UILabel!
 	@IBOutlet weak var FormationValeurLabel : UILabel!
 	@IBOutlet weak var EntrepriseValeurLabel : UILabel!
+	@IBOutlet weak var DateInscriptionLabel : UILabel!
+	@IBOutlet weak var DateInscriptionValeurLabel: UILabel!
 	
 	var eleve: Eleve!
 	
-	
     override func viewDidLoad() {
         super.viewDidLoad()
+		self.navigationController?.setNavigationBarHidden(false, animated: false)
 		
 		AdresseValeurLabel.text = eleve.adresse
 		NomValeurLabel.text = eleve.nom
 		TelValeurLabel.text = eleve.telephone_perso
 		MailValeurLabel.text = eleve.email
-		PromotionValeurLabel.text = eleve.promotion.id
+		PromotionValeurLabel.text = eleve.promotion
 		
 		//AdresseValeurLabel.text = "test"
 	//	loadDatas()
@@ -48,7 +50,6 @@ class ShowDetailEleveViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-	
 
 	
 	

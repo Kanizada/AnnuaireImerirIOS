@@ -40,7 +40,7 @@ class Eleve {
     var code_postal : String = "66000"
     //Postal code of student
 	
-	var promotion: String = "Goa"
+	var ville: String = "Perpignan"
     
     func construct(datas: JSON){
         //TODO with JSON
@@ -53,7 +53,23 @@ class Eleve {
         self.site_web = datas["site_web"].stringValue
         self.adresse = datas["adresse"].stringValue
         self.code_postal = datas["code_postal"].stringValue
-		self.promotion = datas["promotion"].stringValue
+		self.ville = datas["ville"].stringValue
     }
+	
+	func getArray()->[[String]]{
+		var eleve: [[String]] = []
+		eleve.append([self.nom])
+		eleve.append([self.prenom])
+		eleve.append([self.email])
+		eleve.append([self.telephone_mobile])
+		eleve.append([self.telephone_perso])
+		eleve.append([self.site_web])
+		eleve.append([self.adresse])
+		eleve.append([self.code_postal])
+		eleve.append([self.ville])
+		//Pour les eleves
+		//entreprise.append(contentOf: entreprise.eleves)
+		return eleve
+	}
 	
 }

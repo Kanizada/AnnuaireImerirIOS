@@ -64,7 +64,7 @@ class TableViewController: UITableViewController {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		let mySender = sender as! UITableViewCell
 		if(mySender.reuseIdentifier == "cell"){
-			if let dest = segue.destination as? ShowDetailEleveViewController {
+			if let dest = segue.destination as? EleveDetailTableViewController {
 				let dsEleves = dataSource as! DSEleves
 				let eleve = dsEleves.eleves[tableView.indexPathForSelectedRow!.row]
 				dest.eleve = eleve

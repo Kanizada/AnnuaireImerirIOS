@@ -16,13 +16,11 @@ class ShowDetailEleveViewController: UIViewController {
 	@IBOutlet weak var TelLabel : UILabel!
 	@IBOutlet weak var MailLabel : UILabel!
 	@IBOutlet weak var FormationLabel : UILabel!
-	@IBOutlet weak var PromotionLabel : UILabel!
 	@IBOutlet weak var EntrepriseLabel : UILabel!
 	@IBOutlet weak var AdresseValeurLabel : UILabel!
 	@IBOutlet weak var NomValeurLabel: UILabel!
 	@IBOutlet weak var TelValeurLabel : UILabel!
 	@IBOutlet weak var MailValeurLabel : UILabel!
-	@IBOutlet weak var PromotionValeurLabel : UILabel!
 	@IBOutlet weak var FormationValeurLabel : UILabel!
 	@IBOutlet weak var EntrepriseValeurLabel : UILabel!
 	@IBOutlet weak var DateInscriptionLabel : UILabel!
@@ -38,7 +36,6 @@ class ShowDetailEleveViewController: UIViewController {
 		NomValeurLabel.text = eleve.nom
 		TelValeurLabel.text = eleve.telephone_perso
 		MailValeurLabel.text = eleve.email
-		PromotionValeurLabel.text = eleve.promotion
 		
 		//AdresseValeurLabel.text = "test"
 	//	loadDatas()

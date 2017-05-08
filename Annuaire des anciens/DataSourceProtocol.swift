@@ -11,8 +11,15 @@ import SwiftyJSON
 
 class DataSource: NSObject {
     
+    enum type {
+        case ELEVE
+        case ENTREPRISE
+        case NOT_INIT
+    }
+    
     var url: String { return "" }
     var count: Int { return 0 }
+    var typeData: type {return type.NOT_INIT}
     
     func layout(cell: UITableViewCell, indexPath: IndexPath) {
         

@@ -13,6 +13,8 @@ class DSEntreprises: DataSource {
     override var url: String { return URLS.entreprisesList}
     
     var entreprises: [Entreprise] = []
+    var entreprisesFiltered: [Entreprise] = []
+    override var typeData: DataSource.type{return DataSource.type.ENTREPRISE}
     
     override var count: Int { return entreprises.count }
     
@@ -23,9 +25,9 @@ class DSEntreprises: DataSource {
     
     override func loadDatas() {
         
-        let urlStringEleve = URLS.entreprisesList  + "?key=devTmpkey"
+        let urlStringEntreprise = URLS.entreprisesList  + "?key=devTmpkey"
         
-        if let url = URL(string: urlStringEleve) {
+        if let url = URL(string: urlStringEntreprise) {
             if let data = try? Data(contentsOf: url) {
                 let json = JSON(data: data)
                 
@@ -38,9 +40,9 @@ class DSEntreprises: DataSource {
     
     override func parseDatas(json: JSON) {
         for result in json["body"].arrayValue {
-            let newentreprise = Entreprise()
-            newentreprise.construct(datas: result)
-            self.entreprises.append(newentreprise)
+            let newEntreprise = Entreprise()
+            newEntreprise.construct(datas: result)
+            self.entreprises.append(newEntreprise)
         }
     }
 }

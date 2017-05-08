@@ -14,11 +14,14 @@ class DSEleves: DataSource{
     override var url: String { return URLS.elevesList }
     
     var eleves: [Eleve] = []
+    var elevesFiltered: [Eleve] = []
+    override var typeData: DataSource.type{return DataSource.type.ELEVE}
     
-    override var count: Int { return eleves.count }
+    override var count: Int { return elevesFiltered.isEmpty ? eleves.count : elevesFiltered.count}
     
     override func layout(cell: UITableViewCell , indexPath: IndexPath) {
-        cell.textLabel?.text = eleves[indexPath.row].nom
+        //cell.textLabel?.text = eleves[indexPath.row].nom
+        cell.textLabel?.text = elevesFiltered.isEmpty ? eleves[indexPath.row].nom : elevesFiltered[indexPath.row].nom
     }
     
     override func loadDatas() {

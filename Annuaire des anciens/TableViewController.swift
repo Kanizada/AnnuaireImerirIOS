@@ -15,17 +15,26 @@ struct URLS {
 	static let promotionsList = "http://vps366535.ovh.net/api/promotions/list/"
 }
 
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController, UISearchBarDelegate {
 	
 	
 	@IBOutlet var dataSource: DataSource!
-	
+    
+    @IBOutlet weak var entrepriseSearchBar: UISearchBar!
+    @IBOutlet weak var eleveSearchBar: UISearchBar!
+    
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		self.tableView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
-		loadDatas()
-		
+		dataSource.loadDatas()
+
+        if (dataSource.typeData == DataSource.type.ENTREPRISE) {
+            self.entrepriseSearchBar.delegate = self
+        }
+        else if (dataSource.typeData == DataSource.type.ELEVE) {
+            self.eleveSearchBar.delegate = self
+        }
 	}
 	
 	func loadDatas(){
@@ -54,11 +63,11 @@ class TableViewController: UITableViewController {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cellEntreprise", for: indexPath)
 		
 		dataSource.layout(cell: cell, indexPath: indexPath)
-		return cell
+		return cell // TODO filtered
 	}
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return dataSource.count
+		return dataSource.count //TODO filtered
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -77,8 +86,46 @@ class TableViewController: UITableViewController {
 			}
 		}
 	}
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        let cleanSearchText = searchText.lowercased()
+        
+        if (dataSource.typeData == DataSource.type.ELEVE) {
+            let dsEleve = dataSource as! DSEleves
+            
+            if (searchText != "") {
+                dsEleve.elevesFiltered = []
+                for eleve: Eleve in dsEleve.eleves {
+                    if eleve.nom.lowercased().contains(cleanSearchText) {
+                        dsEleve.elevesFiltered.append(eleve)
+                    }
+                }
+            }
+            else {
+                dsEleve.elevesFiltered = []
+            }
+        }
+        else if (dataSource.typeData == DataSource.type.ENTREPRISE) {
+            let dsEntreprise = dataSource as! DSEntreprises
+            
+            if (searchText != "") {
+                dsEntreprise.entreprisesFiltered = []
+                for entreprise: Entreprise in dsEntreprise.entreprises {
+                    if entreprise.nom.lowercased().contains(cleanSearchText) {
+                        dsEntreprise.entreprisesFiltered.append(entreprise)
+                    }
+                }
+            }
+            else {
+                dsEntreprise.entreprisesFiltered = []
+            }
+        }
+        
+        tableView.reloadData()
+    }
 	
-	
+    
 	/*func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 	if let dest = segue.destination as? EntrepriseDetailTableViewController {
 	let dsEntreprise = dataSource as! DSEntreprises

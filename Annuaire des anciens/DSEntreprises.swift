@@ -25,7 +25,7 @@ class DSEntreprises: DataSource {
     
     override func loadDatas() {
         
-        let urlStringEntreprise = URLS.entreprisesList  + "?key=devTmpkey"
+        let urlStringEntreprise = URLS.entreprisesList  + "cptYv2qNjDGHOZRjOmu5sy0gbzKp0ZWdpqbUsCILfos3nkncHShaqiqBSb1SbX6AnhvQUdCaC4e0pBd7tvhUNIvGTxz4vFFTXaJRol21qg1QSfXmKegyXLeQjNVOsAHpKrh9NjaeAc4sr1Obg4JeQY"
         
         if let url = URL(string: urlStringEntreprise) {
             if let data = try? Data(contentsOf: url) {

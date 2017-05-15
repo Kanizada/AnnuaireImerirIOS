@@ -13,7 +13,7 @@ class EleveDetailTableViewController: UITableViewController {
 	var eleve: Eleve!
 	
 	
-	let sectionTitle = ["Nom de l'eleve", "prenom de l'eleve","email de l'eleve", "Téléphone mobile", "Telephone fixe", "Site web", "Adresse de l'eleve", "Code postal", "Ville"]
+	let sectionTitle = ["Nom", "Prénom","Email", "Téléphone mobile", "Telephone fixe", "Site web", "Adresse", "Code postal", "Ville"]
 	
 	var eleveOnTable : [[String]] = []
 

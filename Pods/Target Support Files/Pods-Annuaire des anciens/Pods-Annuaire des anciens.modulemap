@@ -1,0 +1,6 @@
+framework module Pods_Annuaire_des_anciens {
+  umbrella header "Pods-Annuaire des anciens-umbrella.h"
+
+  export *
+  module * { export * }
+}

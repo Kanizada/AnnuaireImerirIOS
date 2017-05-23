@@ -103,7 +103,7 @@
                         </prototypes>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="Eleves" id="eA7-La-vyk"/>
+                    <tabBarItem key="tabBarItem" title="Eleves" image="icone_elevex25" selectedImage="icone_elevex25" id="eA7-La-vyk"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="dataSource" destination="cSp-DP-OcH" id="ITT-Ul-JIb"/>
@@ -350,7 +350,7 @@
                         </prototypes>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="Entreprises" id="FnX-YA-4bs"/>
+                    <tabBarItem key="tabBarItem" title="Entreprises" image="icone_entreprisex25" selectedImage="icone_entreprisex25" id="FnX-YA-4bs"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="dataSource" destination="F29-WL-gm2" id="36v-GA-dWW"/>
@@ -474,4 +474,8 @@
             <point key="canvasLocation" x="-690" y="-215"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icone_elevex25" width="24" height="24"/>
+        <image name="icone_entreprisex25" width="24" height="24"/>
+    </resources>
 </document>

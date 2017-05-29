@@ -10,8 +10,7 @@ import UIKit
 import SwiftyJSON
 
 class Eleve {
-    var key : String = "001"
-    //API key of the user
+    var id : Int = 0
     
     var nom : String = "Name"
     //Last name of student
@@ -42,8 +41,16 @@ class Eleve {
 	
 	var ville: String = "Perpignan"
     
+    //TODO
+    var entreprises : [Entreprise] = []
+    
+    func addEntreprise(entreprise : Entreprise){
+        self.entreprises.append(entreprise)
+    }
+    
     func construct(datas: JSON){
         //TODO with JSON
+        self.id = datas["id"].intValue
         self.nom = datas["nom"].stringValue
         self.prenom = datas["prenom"].stringValue
         self.email = datas["email"].stringValue

@@ -1,10 +1,10 @@
 {
-  "xcodeVersion" : "Xcode 8.3\nBuild version 8E162",
+  "xcodeVersion" : "Xcode 8.0\nBuild version 8A218a",
   "commitish" : "3.1.4",
   "iOS" : [
     {
-      "hash" : "955ce67a071b6a12ad481249f0ed2b2f1456f297331532c52d42181888927a9e",
-      "name" : "SwiftyJSON"
+      "name" : "SwiftyJSON",
+      "md5" : "1d81f723e8a37872cdb19bb97b0f54d6"
     }
   ]
 }

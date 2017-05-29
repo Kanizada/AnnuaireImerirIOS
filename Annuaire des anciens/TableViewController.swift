@@ -43,13 +43,7 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		self.navigationController?.setNavigationBarHidden(false, animated: false)
-<<<<<<< HEAD
         self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
-=======
-        
-        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
->>>>>>> 77ecbed6a15488becdaba7150b9703fd40ac044a
 	}
 	
 	
@@ -69,11 +63,37 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cellEntreprise", for: indexPath)
 		
 		dataSource.layout(cell: cell, indexPath: indexPath)
-		return cell // TODO filtered
+		return cell
+	}
+	
+	override func numberOfSections(in tableView: UITableView) -> Int {
+		return dataSource.makeSection().count
+	}
+	
+	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		var i = 0
+		for key in dataSource.makeSection().keys {
+			if i == section {
+				return key
+			}
+			i += 1
+		}
+		return "#@*!"
 	}
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return dataSource.count //TODO filtered
+		var i = 0;
+		var currentKey:String = "default"
+		for key in dataSource.makeSection().keys {
+			if i == section {
+				currentKey = key
+			}
+			i += 1
+		}
+		guard let count = dataSource.makeSection()[currentKey]?.count  else {
+			fatalError()
+		}
+		return count
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

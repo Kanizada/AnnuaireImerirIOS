@@ -30,4 +30,8 @@ class DataSource: NSObject {
     
     func parseDatas(json: JSON) {}
 	
+	func makeSection() -> Dictionary<String, [String]> {
+		return [:]
+	}
+	
 }

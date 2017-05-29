@@ -134,14 +134,24 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
 		if(mySender.reuseIdentifier == "cell"){
 			if let dest = segue.destination as? EleveDetailTableViewController {
 				let dsEleves = dataSource as! DSEleves
-				let eleve = dsEleves.eleves[tableView.indexPathForSelectedRow!.row]
+                var countElement = 0
+                for i in 0..<tableView.indexPathForSelectedRow!.section {
+                    let countRowInSection = tableView.numberOfRows(inSection: i)
+                    countElement += countRowInSection
+                }
+				let eleve = dsEleves.eleves[countElement + tableView.indexPathForSelectedRow!.row]
 				dest.eleve = eleve
                 dest.eleveid = eleve.id
 			}
 		}else if(mySender.reuseIdentifier == "cellEntreprise"){
 			if let dest = segue.destination as? EntrepriseDetailTableViewController {
 				let dsEntreprise = dataSource as! DSEntreprises
-				let entreprise = dsEntreprise.entreprises[tableView.indexPathForSelectedRow!.row]
+                var countElement = 0
+                for i in 0..<tableView.indexPathForSelectedRow!.section {
+                    let countRowInSection = tableView.numberOfRows(inSection: i)
+                    countElement += countRowInSection
+                }
+				let entreprise = dsEntreprise.entreprises[countElement + tableView.indexPathForSelectedRow!.row]
 				dest.entreprise = entreprise
 			}
 		}

@@ -44,7 +44,12 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		self.navigationController?.setNavigationBarHidden(false, animated: false)
+<<<<<<< HEAD
         self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+=======
+        
+        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+>>>>>>> 77ecbed6a15488becdaba7150b9703fd40ac044a
 	}
 	
 	

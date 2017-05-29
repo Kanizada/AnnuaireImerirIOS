@@ -425,10 +425,10 @@
             </objects>
             <point key="canvasLocation" x="1980" y="-554"/>
         </scene>
-        <!--Custom Tab Bar Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="t1n-qu-dYN">
             <objects>
-                <tabBarController autoresizesArchivedViewToFullSize="NO" id="GFE-Tl-fcy" customClass="CustomTabBarController" customModule="Annuaire_des_anciens" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController autoresizesArchivedViewToFullSize="NO" id="GFE-Tl-fcy" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="s94-l2-wvM" customClass="ListesNavigationItem" customModule="Annuaire_des_anciens" customModuleProvider="target">
                         <barButtonItem key="leftBarButtonItem" title="Déconnexion" id="xFi-0N-Jqe">

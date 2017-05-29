@@ -11,6 +11,7 @@ import UIKit
 class EleveDetailTableViewController: UITableViewController {
 	
 	var eleve: Eleve!
+    var eleveid : Int!
 	
 	
 	let sectionTitle = ["Nom", "Prénom","Email", "Téléphone mobile", "Telephone fixe", "Site web", "Adresse", "Code postal", "Ville"]
@@ -21,6 +22,8 @@ class EleveDetailTableViewController: UITableViewController {
         super.viewDidLoad()
 		self.navigationController?.setNavigationBarHidden(false, animated: false)
 		eleveOnTable = eleve.getArray()
+        
+        let realEleve = DSEleves.elevesList[eleveid]
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

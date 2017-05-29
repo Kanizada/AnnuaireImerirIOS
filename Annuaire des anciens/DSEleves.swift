@@ -52,6 +52,9 @@ class DSEleves: DataSource{
     override var url: String { return URLS.elevesList }
     
     var eleves: [Eleve] = []
+    
+    static var elevesList = [Int:Eleve]()
+    
     var elevesFiltered: [Eleve] = []
     override var typeData: DataSource.type{return DataSource.type.ELEVE}
     
@@ -110,6 +113,25 @@ class DSEleves: DataSource{
 //			return dictForTitlesAndRow
 //		}
 	
+    static func loadList() {
+        let urlStringEleve = URLS.elevesList  + "cptYv2qNjDGHOZRjOmu5sy0gbzKp0ZWdpqbUsCILfos3nkncHShaqiqBSb1SbX6AnhvQUdCaC4e0pBd7tvhUNIvGTxz4vFFTXaJRol21qg1QSfXmKegyXLeQjNVOsAHpKrh9NjaeAc4sr1Obg4JeQY"
+        
+        if let url = URL(string: urlStringEleve) {
+            if let data = try? Data(contentsOf: url) {
+                let json = JSON(data: data)
+                
+                if json["success"].intValue == 1 {
+                    DSEleves.elevesList = [Int:Eleve]()
+                    for result in json["body"].arrayValue {
+                        let newEleve = Eleve()
+                        newEleve.construct(datas: result)
+                        DSEleves.elevesList.updateValue(newEleve, forKey: newEleve.id)
+                    }
+                }
+            }
+        }
+    }
+    
     override func loadDatas() {
         let urlStringEleve = self.url + "cptYv2qNjDGHOZRjOmu5sy0gbzKp0ZWdpqbUsCILfos3nkncHShaqiqBSb1SbX6AnhvQUdCaC4e0pBd7tvhUNIvGTxz4vFFTXaJRol21qg1QSfXmKegyXLeQjNVOsAHpKrh9NjaeAc4sr1Obg4JeQY"
         

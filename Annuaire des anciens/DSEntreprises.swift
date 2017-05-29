@@ -13,6 +13,9 @@ class DSEntreprises: DataSource {
     override var url: String { return URLS.entreprisesList}
     
     var entreprises: [Entreprise] = []
+    
+    static var entreprisesList = [Int:Entreprise]()
+    
     var entreprisesFiltered: [Entreprise] = []
     override var typeData: DataSource.type{return DataSource.type.ENTREPRISE}
     
@@ -45,6 +48,24 @@ class DSEntreprises: DataSource {
         return dictForTitlesAndRow
     }
     
+    static func loadList() {
+        let urlStringEntreprise = URLS.entreprisesList  + "cptYv2qNjDGHOZRjOmu5sy0gbzKp0ZWdpqbUsCILfos3nkncHShaqiqBSb1SbX6AnhvQUdCaC4e0pBd7tvhUNIvGTxz4vFFTXaJRol21qg1QSfXmKegyXLeQjNVOsAHpKrh9NjaeAc4sr1Obg4JeQY"
+        
+        if let url = URL(string: urlStringEntreprise) {
+            if let data = try? Data(contentsOf: url) {
+                let json = JSON(data: data)
+                
+                if json["success"].intValue == 1 {
+                    DSEntreprises.entreprisesList = [Int:Entreprise]()
+                    for result in json["body"].arrayValue {
+                        let newEntreprise = Entreprise()
+                        newEntreprise.construct(datas: result)
+                        DSEntreprises.entreprisesList.updateValue(newEntreprise, forKey: newEntreprise.id)
+                    }
+                }
+            }
+        }
+    }
     
     override func loadDatas() {
         

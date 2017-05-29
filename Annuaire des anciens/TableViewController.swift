@@ -11,13 +11,15 @@ import SwiftyJSON
 
 struct URLS {
 	static let elevesList = "http://vps366535.ovh.net/api/eleves/list/"
-	static let entreprisesList = "http://vps366535.ovh.net/api/entreprises/list/"
-	static let promotionsList = "http://vps366535.ovh.net/api/promotions/list/"
+    static let entreprisesList = "http://vps366535.ovh.net/api/entreprises/list/"
+    static let promotionsList = "http://vps366535.ovh.net/api/promotions/list/"
+    static let relationsList = "http://vps366535.ovh.net/api/relations/list/"
 }
 
 class TableViewController: UITableViewController, UISearchBarDelegate {
 	
-	
+    static var relationed = false
+    
 	@IBOutlet var dataSource: DataSource!
     
     @IBOutlet weak var entrepriseSearchBar: UISearchBar!
@@ -25,9 +27,13 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     
 	override func viewDidLoad() {
 		super.viewDidLoad()
+        
+        DSEleves.loadList()
+        DSEntreprises.loadList()
 		
 		self.tableView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
 		dataSource.loadDatas()
+        self.loadDatas()
 
         if (dataSource.typeData == DataSource.type.ENTREPRISE) {
             self.entrepriseSearchBar.delegate = self
@@ -38,7 +44,34 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
 	}
 	
 	func loadDatas(){
-		dataSource.loadDatas()
+		print("Load eleves")
+        print(DSEleves.elevesList)
+        print("Load entreprises")
+        print(DSEntreprises.entreprisesList)
+        
+        if TableViewController.relationed == false {
+            let urlStringRelations = URLS.relationsList  + "cptYv2qNjDGHOZRjOmu5sy0gbzKp0ZWdpqbUsCILfos3nkncHShaqiqBSb1SbX6AnhvQUdCaC4e0pBd7tvhUNIvGTxz4vFFTXaJRol21qg1QSfXmKegyXLeQjNVOsAHpKrh9NjaeAc4sr1Obg4JeQY"
+            
+            if let url = URL(string: urlStringRelations) {
+                if let data = try? Data(contentsOf: url) {
+                    let json = JSON(data: data)
+                    
+                    if json["success"].intValue == 1 {
+                        for result in json["body"].arrayValue {
+                            
+                            let idEl = result["ideleve"].intValue
+                            let idEn = result["identreprise"].intValue
+                            
+                            
+                            DSEleves.elevesList[idEl]?.entreprises.append(DSEntreprises.entreprisesList[idEn]!)
+                            DSEntreprises.entreprisesList[idEn]?.eleves.append(DSEleves.elevesList[idEl]!)
+                        }
+                    }
+                }
+            }
+            TableViewController.relationed = true
+        }
+        print(DSEleves.elevesList[12]?.entreprises)
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -103,6 +136,7 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
 				let dsEleves = dataSource as! DSEleves
 				let eleve = dsEleves.eleves[tableView.indexPathForSelectedRow!.row]
 				dest.eleve = eleve
+                dest.eleveid = eleve.id
 			}
 		}else if(mySender.reuseIdentifier == "cellEntreprise"){
 			if let dest = segue.destination as? EntrepriseDetailTableViewController {

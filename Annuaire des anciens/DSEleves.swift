@@ -44,6 +44,7 @@ class DSEleves: DataSource{
             neweleve.construct(datas: result)
             eleves.append(neweleve)
         }
+        eleves.sort(by: {$0.nom < $1.nom})
     }
 	
 	static let sharedEleve = DSEleves()

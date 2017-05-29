@@ -23,6 +23,7 @@
 		3FA823901EB3AE940087F5E9 /* EntrepriseDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA8238F1EB3AE940087F5E9 /* EntrepriseDetailTableViewController.swift */; };
 		3FA823CE1EBE53500087F5E9 /* EleveDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA823CD1EBE53500087F5E9 /* EleveDetailTableViewController.swift */; };
 		3FFE564C1E768E3600F00166 /* ShowEleveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE564B1E768E3600F00166 /* ShowEleveViewController.swift */; };
+		770B22521EDC06B20042712C /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770B22501EDC06B20042712C /* CustomTabBarController.swift */; };
 		77EAF0F41EC1997300E016B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77EAF0F31EC1997300E016B2 /* GoogleService-Info.plist */; };
 		77EAF0F61EC19A5700E016B2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EAF0F51EC19A5700E016B2 /* LoginViewController.swift */; };
 		77EAF0FC1EC1C3CF00E016B2 /* Annuaire des anciens-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 77EAF0F91EC19C0700E016B2 /* Annuaire des anciens-Bridging-Header.h */; };
@@ -62,6 +63,7 @@
 		3FA8238F1EB3AE940087F5E9 /* EntrepriseDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntrepriseDetailTableViewController.swift; sourceTree = "<group>"; };
 		3FA823CD1EBE53500087F5E9 /* EleveDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EleveDetailTableViewController.swift; sourceTree = "<group>"; };
 		3FFE564B1E768E3600F00166 /* ShowEleveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowEleveViewController.swift; sourceTree = "<group>"; };
+		770B22501EDC06B20042712C /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		77EAF0F31EC1997300E016B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		77EAF0F51EC19A5700E016B2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		77EAF0F91EC19C0700E016B2 /* Annuaire des anciens-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Annuaire des anciens-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 		3F6E1C781E6F34FD007EE65C /* ViewControler */ = {
 			isa = PBXGroup;
 			children = (
+				770B22501EDC06B20042712C /* CustomTabBarController.swift */,
 				3FFE564B1E768E3600F00166 /* ShowEleveViewController.swift */,
 				3F9E5D821E6D933300FE67BB /* TableViewController.swift */,
 				3FA8238F1EB3AE940087F5E9 /* EntrepriseDetailTableViewController.swift */,
@@ -304,6 +307,7 @@
 			files = (
 				77EAF0FC1EC1C3CF00E016B2 /* Annuaire des anciens-Bridging-Header.h in Sources */,
 				77EAF0F61EC19A5700E016B2 /* LoginViewController.swift in Sources */,
+				770B22521EDC06B20042712C /* CustomTabBarController.swift in Sources */,
 				3F6E1C471E6F2F19007EE65C /* DataSourceProtocol.swift in Sources */,
 				3FA823CE1EBE53500087F5E9 /* EleveDetailTableViewController.swift in Sources */,
 				3F6E1C421E6F2ECC007EE65C /* DSEntreprises.swift in Sources */,

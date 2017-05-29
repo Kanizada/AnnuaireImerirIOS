@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Annuaire_des_anciens" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginView" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Annuaire_des_anciens" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,58 +19,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c56-Pm-MKA">
-                                <state key="normal" title="connexion"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c56-Pm-MKA">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="16" id="yte-1H-RrY"/>
+                                </constraints>
                                 <connections>
-                                    <segue destination="nW3-Re-2nE" kind="show" id="ro1-NR-4Qf"/>
+                                    <segue destination="nW3-Re-2nE" kind="show" identifier="logged" id="ro1-NR-4Qf"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7iG-IU-YsA">
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Identifiant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAy-4F-Ac9">
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dLO-jq-6jE">
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mot de passe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7s-xc-nIj">
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jHh-uw-urO">
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_imerir" translatesAutoresizingMaskIntoConstraints="NO" id="Ynx-Uy-Ws7">
                                 <constraints>
-                                    <constraint firstItem="jHh-uw-urO" firstAttribute="top" secondItem="dLO-jq-6jE" secondAttribute="bottom" constant="20" id="lKX-b3-6l0"/>
-                                    <constraint firstAttribute="bottom" secondItem="N7s-xc-nIj" secondAttribute="bottom" constant="29" id="mhH-kh-VK7"/>
+                                    <constraint firstAttribute="height" constant="254" id="Cma-kT-GBF"/>
                                 </constraints>
-                            </stackView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lep-E8-X3v" customClass="GIDSignInButton">
-                                <frame key="frameInset" minX="67" minY="519" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jP9-8T-bzI" customClass="GIDSignInButton">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="7iG-IU-YsA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="35s-P7-e9f"/>
-                            <constraint firstItem="7iG-IU-YsA" firstAttribute="centerX" secondItem="c56-Pm-MKA" secondAttribute="centerX" id="Dpd-gt-1YW"/>
-                            <constraint firstItem="c56-Pm-MKA" firstAttribute="top" secondItem="7iG-IU-YsA" secondAttribute="bottom" constant="72" id="QEM-SO-Uz0"/>
-                            <constraint firstItem="7iG-IU-YsA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bui-uq-JbG"/>
+                            <constraint firstItem="c56-Pm-MKA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1bF-hV-EzY"/>
+                            <constraint firstItem="jP9-8T-bzI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="91" id="3Ql-6L-2ft"/>
+                            <constraint firstItem="Ynx-Uy-Ws7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="56" id="T0f-TW-HAo"/>
+                            <constraint firstItem="jP9-8T-bzI" firstAttribute="top" secondItem="Ynx-Uy-Ws7" secondAttribute="bottom" constant="60" id="W1M-bo-GR0"/>
+                            <constraint firstItem="Ynx-Uy-Ws7" firstAttribute="centerX" secondItem="jP9-8T-bzI" secondAttribute="centerX" id="X84-W5-34A"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jP9-8T-bzI" secondAttribute="bottom" constant="192" id="eE2-Wu-Fgr"/>
+                            <constraint firstItem="c56-Pm-MKA" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="f6e-wT-F5H"/>
+                            <constraint firstItem="Ynx-Uy-Ws7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="58" id="fAT-EM-ct4"/>
+                            <constraint firstItem="jP9-8T-bzI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fbk-EQ-Sf8"/>
+                            <constraint firstItem="c56-Pm-MKA" firstAttribute="top" secondItem="wfy-db-euE" secondAttribute="top" id="pcj-2O-kBO"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1473" y="-215"/>
+            <point key="canvasLocation" x="-1474.4000000000001" y="-215.44227886056973"/>
         </scene>
         <!--Eleves-->
         <scene sceneID="cP5-pI-ypj">
@@ -447,7 +431,7 @@
                 <tabBarController autoresizesArchivedViewToFullSize="NO" id="GFE-Tl-fcy" customClass="CustomTabBarController" customModule="Annuaire_des_anciens" customModuleProvider="target" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="s94-l2-wvM" customClass="ListesNavigationItem" customModule="Annuaire_des_anciens" customModuleProvider="target">
-                        <barButtonItem key="leftBarButtonItem" title="Deconnect" id="xFi-0N-Jqe">
+                        <barButtonItem key="leftBarButtonItem" title="Déconnexion" id="xFi-0N-Jqe">
                             <connections>
                                 <action selector="onPressDisconnect:" destination="GFE-Tl-fcy" id="e1y-Zx-A80"/>
                             </connections>
@@ -472,7 +456,7 @@
         <scene sceneID="5xJ-Dm-P4X">
             <objects>
                 <navigationController id="nW3-Re-2nE" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="8fX-uR-rZ6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8fX-uR-rZ6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -491,5 +475,6 @@
     <resources>
         <image name="icone_elevex25" width="24" height="24"/>
         <image name="icone_entreprisex25" width="24" height="24"/>
+        <image name="logo_imerir" width="517" height="710"/>
     </resources>
 </document>

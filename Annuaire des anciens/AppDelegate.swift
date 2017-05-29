@@ -33,22 +33,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                                                 annotation: options[UIApplicationOpenURLOptionsKey.annotation])
     }
     
-    
+    // Listener Google Sign In
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
                 withError error: Error!) {
         if (error == nil) {
-            // Perform any operations on signed in user here.
-            let userId = user.userID                  // For client-side use only!
-            let idToken = user.authentication.idToken // Safe to send to the server
-            let fullName = user.profile.name
-            let givenName = user.profile.givenName
-            let familyName = user.profile.familyName
-            let email = user.profile.email
-            // ...
-            
-            print(userId)
-            print(fullName)
             print("worked")
+            let viewController = self.window!.rootViewController
+            viewController?.performSegue(withIdentifier: "logged", sender: nil)
+            
         } else {
             print("dont worked \(error.localizedDescription)")
         }

@@ -10,11 +10,16 @@ import UIKit
 
 class LoginViewController: UIViewController, GIDSignInUIDelegate {
 
+    @IBOutlet weak var signInButton: GIDSignInButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().hostedDomain = "imerir.com"
         
         GIDSignIn.sharedInstance().uiDelegate = self
+        
+        GIDSignIn.sharedInstance().signInSilently()
+        
         
         // Do any additional setup after loading the view.
     }

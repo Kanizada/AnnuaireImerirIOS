@@ -10,9 +10,10 @@ import UIKit
 
 class CustomTabBarController: UITabBarController {
     
-    //Bouton de déconnexion
+    //Disconnect Button
     @IBAction func onPressDisconnect(_ sender: AnyObject) {
-        
+        GIDSignIn.sharedInstance().signOut()
+        dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

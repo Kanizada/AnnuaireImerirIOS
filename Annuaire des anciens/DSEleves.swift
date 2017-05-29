@@ -60,7 +60,7 @@ class DSEleves: DataSource{
     override func layout(cell: UITableViewCell , indexPath: IndexPath) {
         //cell.textLabel?.text = eleves[indexPath.row].nom
 		var i = 0
-		for key in makeSection().keys {
+		for key in makeSection().keys.sorted() {
 			if i == indexPath.section {
 				cell.textLabel?.text = makeSection()[key]![indexPath.row]
 			}

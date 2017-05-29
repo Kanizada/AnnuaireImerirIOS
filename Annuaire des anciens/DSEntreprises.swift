@@ -19,7 +19,30 @@ class DSEntreprises: DataSource {
     override var count: Int { return entreprises.count }
     
     override func layout(cell: UITableViewCell , indexPath: IndexPath) {
-        cell.textLabel?.text = entreprises[indexPath.row].nom
+        var i = 0
+        for key in makeSection().keys.sorted() {
+            if i == indexPath.section {
+                cell.textLabel?.text = makeSection()[key]![indexPath.row]
+            }
+            i += 1
+        }
+//        cell.textLabel?.text = entreprises[indexPath.row].nom
+    }
+    
+    override func makeSection() -> [String:[String]] {
+        
+        let dataForSection: [Entreprise] = entreprisesFiltered.isEmpty ? entreprises : entreprisesFiltered
+        var dictForTitlesAndRow = [String:[String]]()
+        
+        for entreprise in dataForSection {
+            if dictForTitlesAndRow.keys.contains(entreprise.nom[0].uppercased()) {
+                dictForTitlesAndRow[entreprise.nom[0].uppercased()]!.append(entreprise.nom)
+            }
+            else {
+                dictForTitlesAndRow.updateValue([entreprise.nom], forKey: entreprise.nom[0].uppercased())
+            }
+        }
+        return dictForTitlesAndRow
     }
     
     

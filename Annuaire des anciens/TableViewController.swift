@@ -72,7 +72,7 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
 	
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		var i = 0
-		for key in dataSource.makeSection().keys {
+		for key in dataSource.makeSection().keys.sorted() {
 			if i == section {
 				return key
 			}
@@ -84,7 +84,7 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		var i = 0;
 		var currentKey:String = "default"
-		for key in dataSource.makeSection().keys {
+		for key in dataSource.makeSection().keys.sorted() {
 			if i == section {
 				currentKey = key
 			}

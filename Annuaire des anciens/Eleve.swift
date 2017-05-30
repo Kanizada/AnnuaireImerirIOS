@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyJSON
 
+//classe qui permet d'ordonner les données dans chaque champs
 class Eleve {
     var id : Int = 0
     
@@ -20,9 +21,6 @@ class Eleve {
     
     var email : String = "name.firstname@my-mail.com"
     //Email of student
-    
-    var date_inscription : String = "01/01/01"
-    //Register date of student
     
     var telephone_mobile : String = "0600000000"
     //Mobile phone of student
@@ -47,14 +45,14 @@ class Eleve {
     func addEntreprise(entreprise : Entreprise){
         self.entreprises.append(entreprise)
     }
-    
+	
+	// fonction qui créer un objet eleve et qui rempli chaque champ de donnée avec les donnée de la base de donnée
     func construct(datas: JSON){
         //TODO with JSON
         self.id = datas["id"].intValue
         self.nom = datas["nom"].stringValue
         self.prenom = datas["prenom"].stringValue
         self.email = datas["email"].stringValue
-        self.date_inscription = datas["date_inscription"].stringValue
         self.telephone_mobile = datas["telephone_mobile"].stringValue
         self.telephone_fixe = datas["telephone_fixe"].stringValue
         self.site_web = datas["site_web"].stringValue

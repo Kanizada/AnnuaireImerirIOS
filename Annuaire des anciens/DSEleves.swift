@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyJSON
 
+// cette extension ajoute au type String deja défini la possibilité d'utiliser subscript et donc recupérer un String qui est a l'index donné, ou  dans l'intervalle donné ( String[1] donnera la 2eme lettre de la String par exemple)
 extension String {
 	
 	var length: Int {
@@ -59,7 +60,8 @@ class DSEleves: DataSource{
     override var typeData: DataSource.type{return DataSource.type.ELEVE}
     
     override var count: Int { return elevesFiltered.isEmpty ? eleves.count : elevesFiltered.count}
-    
+	
+	//fonction qui est appelée lors de l'affichage des données dans le cellForRowAt dans TableViewController
     override func layout(cell: UITableViewCell , indexPath: IndexPath) {
         //cell.textLabel?.text = eleves[indexPath.row].nom
 		var i = 0
@@ -72,6 +74,7 @@ class DSEleves: DataSource{
 //        cell.textLabel?.text = elevesFiltered.isEmpty ? eleves[indexPath.row].nom : elevesFiltered[indexPath.row].nom
     }
 	
+	// fonction qui permet de récuperer les eleves ainsi que la premiere lettre de leurs noms dans un dictionnaire de type String:[String] , avec ceci on peut créer l'index ainsi que les sections dans les TablesViews
 	override func makeSection() -> [String:[String]] {
 		
 		let dataForSection: [Eleve] = elevesFiltered.isEmpty ? eleves : elevesFiltered
@@ -88,31 +91,8 @@ class DSEleves: DataSource{
 		return dictForTitlesAndRow
 	}
 	
-//	override func makeSection() -> Dictionary<String, [String]> {
-//		
-//			let dataForSection: [Eleve] = elevesFiltered.isEmpty ? eleves : elevesFiltered
-//			var dictForTitlesAndRow:[String:[String]] = [:]
-//			
-//			//if(elevesFiltered.isEmpty){
-//			
-//			for allEleve in dataForSection {
-//				
-//				let nameInMemori: String = allEleve.nom //)+""+allEleve.prenom)
-//				let testValeurActuelle:Int = (value(forKey: nameInMemori[1]) != nil) ? 0 : 1
-//				print(testValeurActuelle)
-//				
-//				if(testValeurActuelle == 0){
-//					dictForTitlesAndRow.updateValue([nameInMemori], forKey: nameInMemori[1])
-//					
-//				} else if(testValeurActuelle == 1){
-//					dictForTitlesAndRow[nameInMemori[1]]?.append(nameInMemori)
-//				}
-//				print(dictForTitlesAndRow)
-//			}
-//			
-//			return dictForTitlesAndRow
-//		}
 	
+	//fonction qui permet de remplir un dictionnaire statique avec les id des eleves trouvés sur la base de donnée avec comme value l'eleve et comme clé son ID
     static func loadList() {
         let urlStringEleve = URLS.elevesList  + "cptYv2qNjDGHOZRjOmu5sy0gbzKp0ZWdpqbUsCILfos3nkncHShaqiqBSb1SbX6AnhvQUdCaC4e0pBd7tvhUNIvGTxz4vFFTXaJRol21qg1QSfXmKegyXLeQjNVOsAHpKrh9NjaeAc4sr1Obg4JeQY"
         
@@ -134,6 +114,7 @@ class DSEleves: DataSource{
         }
     }
 	
+	//fonction qui appelle la fonction parseData pour parser les eleves de la base de donnée
     override func loadDatas() {
         let urlStringEleve = self.url + "cptYv2qNjDGHOZRjOmu5sy0gbzKp0ZWdpqbUsCILfos3nkncHShaqiqBSb1SbX6AnhvQUdCaC4e0pBd7tvhUNIvGTxz4vFFTXaJRol21qg1QSfXmKegyXLeQjNVOsAHpKrh9NjaeAc4sr1Obg4JeQY"
         
@@ -147,7 +128,8 @@ class DSEleves: DataSource{
             }
         }
     }
-    
+	
+	//fonction qui pour chaque eleve, rempli les données comme le nom ou le prenom et les trie alphabetiquement
     override func parseDatas(json: JSON){
         for result in json["body"].arrayValue {
             let neweleve = Eleve()

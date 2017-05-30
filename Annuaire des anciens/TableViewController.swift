@@ -10,8 +10,8 @@ import UIKit
 import SwiftyJSON
 
 struct URLS {
-	static let elevesList = "http://vps366535.ovh.net/api/eleves/list/"
-    static let entreprisesList = "http://vps366535.ovh.net/api/entreprises/list/"
+	static let elevesList = "http://vps366535.ovh.net/api/eleves/list/"				//début des différentes routes pour acceder
+    static let entreprisesList = "http://vps366535.ovh.net/api/entreprises/list/"	// a la base de données
     static let promotionsList = "http://vps366535.ovh.net/api/promotions/list/"
     static let relationsList = "http://vps366535.ovh.net/api/relations/list/"
 }
@@ -35,7 +35,7 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
 		dataSource.loadDatas()
         self.loadDatas()
 
-        if (dataSource.typeData == DataSource.type.ENTREPRISE) {
+        if (dataSource.typeData == DataSource.type.ENTREPRISE) {	   // definition du type de datasource selon ou on se trouve
             self.entrepriseSearchBar.delegate = self
         }
         else if (dataSource.typeData == DataSource.type.ELEVE) {
@@ -43,10 +43,10 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         }
 	}
 	
-	func loadDatas(){
-        
-        if TableViewController.relationed == false {
-            let urlStringRelations = URLS.relationsList  + "cptYv2qNjDGHOZRjOmu5sy0gbzKp0ZWdpqbUsCILfos3nkncHShaqiqBSb1SbX6AnhvQUdCaC4e0pBd7tvhUNIvGTxz4vFFTXaJRol21qg1QSfXmKegyXLeQjNVOsAHpKrh9NjaeAc4sr1Obg4JeQY"
+	func loadDatas(){								//fonction qui permet de charger les données dans l'application
+		
+        if TableViewController.relationed == false { // test du bool pour éviter les redondances
+            let urlStringRelations = URLS.relationsList  + "cptYv2qNjDGHOZRjOmu5sy0gbzKp0ZWdpqbUsCILfos3nkncHShaqiqBSb1SbX6AnhvQUdCaC4e0pBd7tvhUNIvGTxz4vFFTXaJRol21qg1QSfXmKegyXLeQjNVOsAHpKrh9NjaeAc4sr1Obg4JeQY"   //url de la base de donnée de la table de relation
             
             if let url = URL(string: urlStringRelations) {
                 if let data = try? Data(contentsOf: url) {
@@ -61,14 +61,12 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
                             
                             DSEleves.elevesList[idEl]?.entreprises.append(DSEntreprises.entreprisesList[idEn]!)
                             DSEntreprises.entreprisesList[idEn]?.eleves.append(DSEleves.elevesList[idEl]!)
-							print(DSEntreprises.entreprisesList[idEn]?.nom)
-							print(DSEntreprises.entreprisesList[idEn]?.eleves)
+							//ajout de l'eleve dans l'entreprises et de  l'entreprises dans l'eleve si ils sont liés dans la table relation
                         }
                     }
                 }
             }
-			print("Here")
-            TableViewController.relationed = true
+            TableViewController.relationed = true     //bool pour éviter de refaire le traitement
         }
 	}
 	
@@ -87,18 +85,28 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		if(self.tabBarController?.selectedIndex == 0){
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-		
+															//appel de la fonction définie dans DSEleves, qui permet l'affichage
 		dataSource.layout(cell: cell, indexPath: indexPath)
 			return cell
 		}
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cellEntreprise", for: indexPath)
 		
+		//appel de la fonction définie dans DSEntreprises, qui permet l'affichage
 		dataSource.layout(cell: cell, indexPath: indexPath)
 		return cell
 	}
 	
 	override func numberOfSections(in tableView: UITableView) -> Int {
 		return dataSource.makeSection().count
+	}
+	
+	// Création de l'index sur le coté, contenant uniquement les lettres des eleves présents
+	override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+		var data: [String] = []
+		for key in dataSource.makeSection().keys {
+			data.append(key)
+		}
+		return data.sorted()
 	}
 	
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -126,9 +134,8 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
 		}
 		return count
 	}
-	
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		let mySender = sender as! UITableViewCell
+	//envoie des id dans le prochain TableViewController, permettant de récuperer les données dans le Controller
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {  		let mySender = sender as! UITableViewCell
 		if(mySender.reuseIdentifier == "cell"){
 			if let dest = segue.destination as? ShowEleveViewController {
 				let dsEleves = dataSource as! DSEleves
@@ -161,19 +168,19 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         let cleanSearchText = searchText.lowercased()
-        
+		
         if (dataSource.typeData == DataSource.type.ELEVE) {
             let dsEleve = dataSource as! DSEleves
             
-            if (searchText != "") {
-                dsEleve.elevesFiltered = []
-                for eleve: Eleve in dsEleve.eleves {
+            if (searchText != "") {						//Si un texte est entré
+                dsEleve.elevesFiltered = []				//on clean le tableau des données filtrées
+                for eleve: Eleve in dsEleve.eleves {	//rajout des données contenant le texte saisi dans les données filtrées
                     if eleve.nom.lowercased().contains(cleanSearchText) {
                         dsEleve.elevesFiltered.append(eleve)
                     }
                 }
             }
-            else {
+            else {										//Sinon on clean les données filtrées
                 dsEleve.elevesFiltered = []
             }
         }
@@ -193,19 +200,9 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
             }
         }
         
-        tableView.reloadData()
+        tableView.reloadData()		//refresh tableView
     }
 	
-    
-	/*func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-	if let dest = segue.destination as? EntrepriseDetailTableViewController {
-	let dsEntreprise = dataSource as! DSEntreprises
-	let entreprise = DSEntreprises.entreprises[tableView.indexPathForSelectedRow!.row]
-	dest.itemNom = entreprise
-	}
-	
-	
-	}*/
 }
 
 

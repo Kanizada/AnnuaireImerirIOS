@@ -11,8 +11,8 @@ import UIKit
 class CustomTabBarController: UITabBarController {
     
     //Disconnect Button
-    @IBAction func onPressDisconnect(_ sender: AnyObject) {
-        GIDSignIn.sharedInstance().signOut()
+    @IBAction func onPressDisconnect(_ sender: AnyObject) {		//Fonction qui sert a modifier le bouton back du
+        GIDSignIn.sharedInstance().signOut()					//tabBarController pour qu'il renvoi directement a la 1ere vue
         dismiss(animated: true, completion: nil)
     }
     

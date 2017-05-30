@@ -10,28 +10,23 @@ import UIKit
 
 class LoginViewController: UIViewController, GIDSignInUIDelegate {
 
-    @IBOutlet weak var signInButton: GIDSignInButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        GIDSignIn.sharedInstance().hostedDomain = "imerir.com"
-        
-        GIDSignIn.sharedInstance().uiDelegate = self
-        
+		
+		//Autoriser la connexion silencieuse
         GIDSignIn.sharedInstance().signInSilently()
-        
-        
-        // Do any additional setup after loading the view.
+		
     }
         
     
-    // Present a view that prompts the user to sign in with Google
+    //Affichage du Google Sign-In
     func sign(_ signIn: GIDSignIn!,
               present viewController: UIViewController!) {
         self.present(viewController, animated: true, completion: nil)
     }
     
-    // Dismiss the "Sign in with Google" view
+    //Masquage du Google Sign-In
     func sign(_ signIn: GIDSignIn!,
               dismiss viewController: UIViewController!) {
         self.dismiss(animated: true, completion: nil)

@@ -20,11 +20,11 @@ class Entreprise {
     var email : String = "contact@google.com"
 	var site_web : String = ""
     
-    //TODO
+	
     var eleves : [Eleve] = []
     
     func construct(datas: JSON){
-        //TODO with JSON
+
         self.id = datas["id"].intValue
         self.nom = datas["nom"].stringValue
         self.adresse = datas["adresse"].stringValue

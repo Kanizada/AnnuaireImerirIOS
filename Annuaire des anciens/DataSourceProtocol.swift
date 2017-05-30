@@ -10,8 +10,8 @@ import UIKit
 import SwiftyJSON
 
 
-class DataSource: NSObject {
-    
+class DataSource: NSObject {			// Cette classe est la base des 2 datasources qui seront utilisé dans l'application
+										// chaque variable et chaque fonction déclarées ici pourra etre utiliser dans les datasources
     enum type {
         case ELEVE
         case ENTREPRISE

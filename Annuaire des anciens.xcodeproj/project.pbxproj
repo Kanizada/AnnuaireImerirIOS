@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F4FB0501EDCE28A0003F048 /* ShowEntrepriseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4FB04F1EDCE28A0003F048 /* ShowEntrepriseViewController.swift */; };
 		3F6E1C401E6F2EA2007EE65C /* DSEleves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E1C3F1E6F2EA2007EE65C /* DSEleves.swift */; };
 		3F6E1C421E6F2ECC007EE65C /* DSEntreprises.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E1C411E6F2ECC007EE65C /* DSEntreprises.swift */; };
 		3F6E1C471E6F2F19007EE65C /* DataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E1C461E6F2F19007EE65C /* DataSourceProtocol.swift */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		3E49C50534DEE091AC423196 /* Pods-Annuaire des anciens.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Annuaire des anciens.release.xcconfig"; path = "Pods/Target Support Files/Pods-Annuaire des anciens/Pods-Annuaire des anciens.release.xcconfig"; sourceTree = "<group>"; };
+		3F4FB04F1EDCE28A0003F048 /* ShowEntrepriseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowEntrepriseViewController.swift; sourceTree = "<group>"; };
 		3F6E1C3F1E6F2EA2007EE65C /* DSEleves.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSEleves.swift; sourceTree = "<group>"; };
 		3F6E1C411E6F2ECC007EE65C /* DSEntreprises.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSEntreprises.swift; sourceTree = "<group>"; };
 		3F6E1C461E6F2F19007EE65C /* DataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceProtocol.swift; sourceTree = "<group>"; };
@@ -105,11 +107,12 @@
 			isa = PBXGroup;
 			children = (
 				770B22501EDC06B20042712C /* CustomTabBarController.swift */,
-				3FFE564B1E768E3600F00166 /* ShowEleveViewController.swift */,
-				3F9E5D821E6D933300FE67BB /* TableViewController.swift */,
-				3FA8238F1EB3AE940087F5E9 /* EntrepriseDetailTableViewController.swift */,
-				3FA823CD1EBE53500087F5E9 /* EleveDetailTableViewController.swift */,
 				77EAF0F51EC19A5700E016B2 /* LoginViewController.swift */,
+				3FFE564B1E768E3600F00166 /* ShowEleveViewController.swift */,
+				3F4FB04F1EDCE28A0003F048 /* ShowEntrepriseViewController.swift */,
+				3F9E5D821E6D933300FE67BB /* TableViewController.swift */,
+				3FA823CD1EBE53500087F5E9 /* EleveDetailTableViewController.swift */,
+				3FA8238F1EB3AE940087F5E9 /* EntrepriseDetailTableViewController.swift */,
 			);
 			name = ViewControler;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				3F6E1C471E6F2F19007EE65C /* DataSourceProtocol.swift in Sources */,
 				3FA823CE1EBE53500087F5E9 /* EleveDetailTableViewController.swift in Sources */,
 				3F6E1C421E6F2ECC007EE65C /* DSEntreprises.swift in Sources */,
+				3F4FB0501EDCE28A0003F048 /* ShowEntrepriseViewController.swift in Sources */,
 				3F9E5D961E6D939A00FE67BB /* Entreprise.swift in Sources */,
 				3FA823901EB3AE940087F5E9 /* EntrepriseDetailTableViewController.swift in Sources */,
 				3FFE564C1E768E3600F00166 /* ShowEleveViewController.swift in Sources */,

@@ -14,9 +14,11 @@ class Entreprise {
     var id : Int = 0
     var nom : String = "Google"
     var adresse : String = "Silicon Valley"
+	var ville : String = ""
     var code_postal : String = "66000"
     var telephone : String = "00000000"
     var email : String = "contact@google.com"
+	var site_web : String = ""
     
     //TODO
     var eleves : [Eleve] = []
@@ -29,6 +31,8 @@ class Entreprise {
         self.email = datas["email"].stringValue
         self.telephone = datas["telephone"].stringValue
         self.code_postal = datas["code_postal"].stringValue
+		self.ville = datas["ville"].stringValue
+		self.site_web = datas["site_web"].stringValue
     }
 	
 	func getArray()->[[String]]{

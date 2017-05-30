@@ -8,46 +8,42 @@
 
 import UIKit
 
-class ShowEleveViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class ShowEntrepriseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+	
 	@IBOutlet var dataSource: DataSource!
 	@IBOutlet weak var nomLabel : UILabel!
-	@IBOutlet weak var prenomLabel: UILabel!
-	@IBOutlet weak var nomprenomLabel : UILabel!
 	@IBOutlet weak var mailLabel : UILabel!
 	@IBOutlet weak var fixeLabel : UILabel!
-	@IBOutlet weak var mobileLabel: UILabel!
 	@IBOutlet weak var webLabel : UILabel!
 	@IBOutlet weak var adresseLabel : UILabel!
 	@IBOutlet weak var villeLabel: UILabel!
 	@IBOutlet weak var postalLabel : UILabel!
 	@IBOutlet weak var relationTable: UITableView!
 	
-
-	var eleveid : Int!
-	var entrepriseLiees: [Entreprise] = []
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	var entrepriseid : Int!
+	var elevesLies: [Eleve] = []
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
 		self.navigationController?.setNavigationBarHidden(false, animated: false)
+		let realEntreprise = DSEntreprises.entreprisesList[entrepriseid]!
+		elevesLies = (DSEntreprises.entreprisesList[entrepriseid]?.eleves)!
 		
-		let realEleve = DSEleves.elevesList[eleveid]!
-		entrepriseLiees = (DSEleves.elevesList[eleveid]?.entreprises)!
-		
-		nomLabel.text = realEleve.nom
-		prenomLabel.text = realEleve.prenom
-		mailLabel.text = realEleve.email
-		fixeLabel.text = realEleve.telephone_fixe
-		mobileLabel.text = realEleve.telephone_mobile
-		webLabel.text = realEleve.site_web
-		adresseLabel.text = realEleve.adresse
-		villeLabel.text = realEleve.ville
-		postalLabel.text = realEleve.code_postal
+		nomLabel.text = realEntreprise.nom
+		mailLabel.text = realEntreprise.email
+		fixeLabel.text = realEntreprise.telephone
+		webLabel.text = realEntreprise.site_web
+		adresseLabel.text = realEntreprise.adresse
+		villeLabel.text = realEntreprise.ville
+		postalLabel.text = realEntreprise.code_postal
 		
 		relationTable.delegate = self
 		relationTable.dataSource = self
 		
-    }
+		print(elevesLies)
+		
+	}
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
 		// #warning Incomplete implementation, return the number of sections
@@ -56,17 +52,17 @@ class ShowEleveViewController: UIViewController, UITableViewDelegate, UITableVie
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		// #warning Incomplete implementation, return the number of rows
-		return entrepriseLiees.count
+		return elevesLies.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "cellDetailEleve", for: indexPath)
+		let cell = tableView.dequeueReusableCell(withIdentifier: "cellDetailEntreprise", for: indexPath)
 		
-		cell.textLabel?.text = entrepriseLiees[indexPath.row].nom
+		cell.textLabel?.text = elevesLies[indexPath.row].nom
 		
 		return cell
 	}
-
-
+	
+	
 	
 }

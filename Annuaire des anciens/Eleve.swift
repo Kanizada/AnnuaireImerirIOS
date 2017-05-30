@@ -27,7 +27,7 @@ class Eleve {
     var telephone_mobile : String = "0600000000"
     //Mobile phone of student
     
-    var telephone_perso : String = "000000000"
+    var telephone_fixe : String = "000000000"
     //Personnal phone of student
     
     var site_web : String = "http://pfffff.com"
@@ -56,7 +56,7 @@ class Eleve {
         self.email = datas["email"].stringValue
         self.date_inscription = datas["date_inscription"].stringValue
         self.telephone_mobile = datas["telephone_mobile"].stringValue
-        self.telephone_perso = datas["telephone_fixe"].stringValue
+        self.telephone_fixe = datas["telephone_fixe"].stringValue
         self.site_web = datas["site_web"].stringValue
         self.adresse = datas["adresse"].stringValue
         self.code_postal = datas["code_postal"].stringValue
@@ -69,7 +69,7 @@ class Eleve {
 		eleve.append([self.prenom])
 		eleve.append([self.email])
 		eleve.append([self.telephone_mobile])
-		eleve.append([self.telephone_perso])
+		eleve.append([self.telephone_fixe])
 		eleve.append([self.site_web])
 		eleve.append([self.adresse])
 		eleve.append([self.code_postal])

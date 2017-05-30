@@ -56,17 +56,18 @@ class DSEntreprises: DataSource {
                 let json = JSON(data: data)
                 
                 if json["success"].intValue == 1 {
-                    DSEntreprises.entreprisesList = [Int:Entreprise]()
-                    for result in json["body"].arrayValue {
-                        let newEntreprise = Entreprise()
-                        newEntreprise.construct(datas: result)
-                        DSEntreprises.entreprisesList.updateValue(newEntreprise, forKey: newEntreprise.id)
-                    }
+					if DSEntreprises.entreprisesList.isEmpty {
+						for result in json["body"].arrayValue {
+							let newEntreprise = Entreprise()
+							newEntreprise.construct(datas: result)
+							DSEntreprises.entreprisesList.updateValue(newEntreprise, forKey: newEntreprise.id)
+						}
+					}
                 }
             }
         }
     }
-    
+	
     override func loadDatas() {
         
         let urlStringEntreprise = URLS.entreprisesList  + "cptYv2qNjDGHOZRjOmu5sy0gbzKp0ZWdpqbUsCILfos3nkncHShaqiqBSb1SbX6AnhvQUdCaC4e0pBd7tvhUNIvGTxz4vFFTXaJRol21qg1QSfXmKegyXLeQjNVOsAHpKrh9NjaeAc4sr1Obg4JeQY"
@@ -88,5 +89,6 @@ class DSEntreprises: DataSource {
             newEntreprise.construct(datas: result)
             self.entreprises.append(newEntreprise)
         }
+		entreprises.sort(by: {$0.nom < $1.nom})
     }
 }

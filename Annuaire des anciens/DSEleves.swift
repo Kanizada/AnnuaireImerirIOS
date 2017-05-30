@@ -121,17 +121,19 @@ class DSEleves: DataSource{
                 let json = JSON(data: data)
                 
                 if json["success"].intValue == 1 {
-                    DSEleves.elevesList = [Int:Eleve]()
-                    for result in json["body"].arrayValue {
-                        let newEleve = Eleve()
-                        newEleve.construct(datas: result)
-                        DSEleves.elevesList.updateValue(newEleve, forKey: newEleve.id)
-                    }
+					if DSEleves.elevesList.isEmpty {
+						for result in json["body"].arrayValue {
+							let newEleve = Eleve()
+							newEleve.construct(datas: result)
+							DSEleves.elevesList.updateValue(newEleve, forKey: newEleve.id)
+						}
+						
+					}
                 }
             }
         }
     }
-    
+	
     override func loadDatas() {
         let urlStringEleve = self.url + "cptYv2qNjDGHOZRjOmu5sy0gbzKp0ZWdpqbUsCILfos3nkncHShaqiqBSb1SbX6AnhvQUdCaC4e0pBd7tvhUNIvGTxz4vFFTXaJRol21qg1QSfXmKegyXLeQjNVOsAHpKrh9NjaeAc4sr1Obg4JeQY"
         

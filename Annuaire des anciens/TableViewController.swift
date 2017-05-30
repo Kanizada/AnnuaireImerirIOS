@@ -44,10 +44,6 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
 	}
 	
 	func loadDatas(){
-		print("Load eleves")
-        print(DSEleves.elevesList)
-        print("Load entreprises")
-        print(DSEntreprises.entreprisesList)
         
         if TableViewController.relationed == false {
             let urlStringRelations = URLS.relationsList  + "cptYv2qNjDGHOZRjOmu5sy0gbzKp0ZWdpqbUsCILfos3nkncHShaqiqBSb1SbX6AnhvQUdCaC4e0pBd7tvhUNIvGTxz4vFFTXaJRol21qg1QSfXmKegyXLeQjNVOsAHpKrh9NjaeAc4sr1Obg4JeQY"
@@ -65,13 +61,15 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
                             
                             DSEleves.elevesList[idEl]?.entreprises.append(DSEntreprises.entreprisesList[idEn]!)
                             DSEntreprises.entreprisesList[idEn]?.eleves.append(DSEleves.elevesList[idEl]!)
+							print(DSEntreprises.entreprisesList[idEn]?.nom)
+							print(DSEntreprises.entreprisesList[idEn]?.eleves)
                         }
                     }
                 }
             }
+			print("Here")
             TableViewController.relationed = true
         }
-        print(DSEleves.elevesList[12]?.entreprises)
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -132,7 +130,7 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		let mySender = sender as! UITableViewCell
 		if(mySender.reuseIdentifier == "cell"){
-			if let dest = segue.destination as? EleveDetailTableViewController {
+			if let dest = segue.destination as? ShowEleveViewController {
 				let dsEleves = dataSource as! DSEleves
                 var countElement = 0
                 for i in 0..<tableView.indexPathForSelectedRow!.section {
@@ -140,19 +138,22 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
                     countElement += countRowInSection
                 }
 				let eleve = dsEleves.eleves[countElement + tableView.indexPathForSelectedRow!.row]
-				dest.eleve = eleve
                 dest.eleveid = eleve.id
 			}
 		}else if(mySender.reuseIdentifier == "cellEntreprise"){
-			if let dest = segue.destination as? EntrepriseDetailTableViewController {
+			if let dest = segue.destination as? ShowEntrepriseViewController {
 				let dsEntreprise = dataSource as! DSEntreprises
                 var countElement = 0
-                for i in 0..<tableView.indexPathForSelectedRow!.section {
+                for i in 0..<tableView.indexPathForSelectedRow!.section{
                     let countRowInSection = tableView.numberOfRows(inSection: i)
                     countElement += countRowInSection
                 }
+				
+				
+				
 				let entreprise = dsEntreprise.entreprises[countElement + tableView.indexPathForSelectedRow!.row]
-				dest.entreprise = entreprise
+				
+				dest.entrepriseid = entreprise.id
 			}
 		}
 	}

@@ -49,7 +49,7 @@ class DSEntreprises: DataSource {
     }
     
     static func loadList() {
-        let urlStringEntreprise = URLS.entreprisesList  + "cptYv2qNjDGHOZRjOmu5sy0gbzKp0ZWdpqbUsCILfos3nkncHShaqiqBSb1SbX6AnhvQUdCaC4e0pBd7tvhUNIvGTxz4vFFTXaJRol21qg1QSfXmKegyXLeQjNVOsAHpKrh9NjaeAc4sr1Obg4JeQY"
+        let urlStringEntreprise = URLS.entreprisesList  + "cptYv2qNjDGHOZRjOmu5sy0gbzKp0ZWdpqbUsCILfos3nkncHShaqiqBSb1SbX6AnhvQUdCaC4e0pBd7tvhUNIvGTxz4vFFTXaJRol21qg1QSfXmKegyXLeQjNVOsAHpKrh9NjaeAc4sr1Obg4JeQY"  // fin de l'url pour se connecter a la base de donnée
         
         if let url = URL(string: urlStringEntreprise) {
             if let data = try? Data(contentsOf: url) {

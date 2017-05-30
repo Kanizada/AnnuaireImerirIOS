@@ -9,7 +9,6 @@
 import UIKit
 import SwiftyJSON
 
-//classe qui permet d'ordonner les données dans chaque champs
 class Eleve {
     var id : Int = 0
     
@@ -46,7 +45,7 @@ class Eleve {
         self.entreprises.append(entreprise)
     }
 	
-	// fonction qui créer un objet eleve et qui rempli chaque champ de donnée avec les donnée de la base de donnée
+	// fonction qui créer un objet eleve et qui rempli chaque champs de données avec les données de la base de données
     func construct(datas: JSON){
         //TODO with JSON
         self.id = datas["id"].intValue

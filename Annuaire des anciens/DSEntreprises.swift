@@ -9,18 +9,25 @@
 import UIKit
 import SwiftyJSON
 class DSEntreprises: DataSource {
-    
-    override var url: String { return URLS.entreprisesList}
+	
+	override var datas: [Any]{
+		return entreprises
+	}
     
     var entreprises: [Entreprise] = []
     
     static var entreprisesList = [Int:Entreprise]()
     
     var entreprisesFiltered: [Entreprise] = []
-    override var typeData: DataSource.type{return DataSource.type.ENTREPRISE}
-    
+	override var typeData: type {return .ENTREPRISE}
+	
     override var count: Int { return entreprises.count }
-    
+	
+	
+	override func setDatas(datasLoaded: [Any]) {
+		entreprises = datasLoaded as! [Entreprise]
+	}
+	
     override func layout(cell: UITableViewCell , indexPath: IndexPath) {
         var i = 0
         for key in makeSection().keys.sorted() {
@@ -47,48 +54,41 @@ class DSEntreprises: DataSource {
         }
         return dictForTitlesAndRow
     }
-    
-    static func loadList() {
-        let urlStringEntreprise = URLS.entreprisesList  + "cptYv2qNjDGHOZRjOmu5sy0gbzKp0ZWdpqbUsCILfos3nkncHShaqiqBSb1SbX6AnhvQUdCaC4e0pBd7tvhUNIvGTxz4vFFTXaJRol21qg1QSfXmKegyXLeQjNVOsAHpKrh9NjaeAc4sr1Obg4JeQY"  // fin de l'url pour se connecter a la base de donnée
-        
-        if let url = URL(string: urlStringEntreprise) {
-            if let data = try? Data(contentsOf: url) {
-                let json = JSON(data: data)
-                
-                if json["success"].intValue == 1 {
-					if DSEntreprises.entreprisesList.isEmpty {
-						for result in json["body"].arrayValue {
-							let newEntreprise = Entreprise()
-							newEntreprise.construct(datas: result)
-							DSEntreprises.entreprisesList.updateValue(newEntreprise, forKey: newEntreprise.id)
-						}
-					}
-                }
-            }
-        }
-    }
 	
-    override func loadDatas() {
-        
-        let urlStringEntreprise = URLS.entreprisesList  + "cptYv2qNjDGHOZRjOmu5sy0gbzKp0ZWdpqbUsCILfos3nkncHShaqiqBSb1SbX6AnhvQUdCaC4e0pBd7tvhUNIvGTxz4vFFTXaJRol21qg1QSfXmKegyXLeQjNVOsAHpKrh9NjaeAc4sr1Obg4JeQY"
-        
-        if let url = URL(string: urlStringEntreprise) {
-            if let data = try? Data(contentsOf: url) {
-                let json = JSON(data: data)
-                
-                if json["success"].intValue == 1 {
-                    parseDatas(json: json)
-                }
-            }
-        }
-    }
-    
-    override func parseDatas(json: JSON) {
-        for result in json["body"].arrayValue {
-            let newEntreprise = Entreprise()
-            newEntreprise.construct(datas: result)
-            self.entreprises.append(newEntreprise)
-        }
-		entreprises.sort(by: {$0.nom < $1.nom})
-    }
+	override func loadDatas() {
+		let webservice = WebService()
+		self.setDatas(datasLoaded: webservice.loadDataSource(dataSource: self))
+		entreprises = entreprises.sorted(by: {$0.nom < $1.nom})
+	}
+	
+	override func prepareForSegue(dataSource: DataSource, segue: UIStoryboardSegue, tableView: UITableView) {
+		if let dest = segue.destination as? ShowEntrepriseViewController {
+			let dsEntreprise = dataSource as! DSEntreprises
+			var countElement = 0
+			for i in 0..<tableView.indexPathForSelectedRow!.section{
+				let countRowInSection = tableView.numberOfRows(inSection: i)
+				countElement += countRowInSection
+			}
+			let entreprise = dsEntreprise.entreprises[countElement + tableView.indexPathForSelectedRow!.row]
+			
+			dest.entreprise = entreprise
+		}
+	}
+	
+	override func filter(dataSource: DataSource, searchText: String) {
+		let dsEntreprise = dataSource as! DSEntreprises
+		let cleanSearchText = searchText.lowercased()
+		
+		if (searchText != "") {
+			dsEntreprise.entreprisesFiltered = []
+			for entreprise: Entreprise in dsEntreprise.entreprises {
+				if entreprise.nom.lowercased().contains(cleanSearchText) {
+					dsEntreprise.entreprisesFiltered.append(entreprise)
+				}
+			}
+		}
+		else {
+			dsEntreprise.entreprisesFiltered = []
+		}
+	}
 }

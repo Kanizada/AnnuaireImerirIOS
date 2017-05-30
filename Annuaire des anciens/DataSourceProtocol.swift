@@ -12,26 +12,25 @@ import SwiftyJSON
 
 class DataSource: NSObject {			// Cette classe est la base des 2 datasources qui seront utilisé dans l'application
 										// chaque variable et chaque fonction déclarées ici pourra etre utiliser dans les datasources
-    enum type {
-        case ELEVE
-        case ENTREPRISE
-        case NOT_INIT
-    }
     
     var url: String { return "" }
     var count: Int { return 0 }
     var typeData: type {return type.NOT_INIT}
+	var datas: [Any] {return []}
+	var datasFiltered: [Any] {return []}
+	
+	func setDatas(datasLoaded: [Any]){}
     
-    func layout(cell: UITableViewCell, indexPath: IndexPath) {
-        
-    }
-    
+    func layout(cell: UITableViewCell, indexPath: IndexPath) {}
+	
+	func prepareForSegue(dataSource: DataSource, segue: UIStoryboardSegue, tableView: UITableView){}
+	
     func loadDatas() {}
     
     func parseDatas(json: JSON) {}
 	
-	func makeSection() -> Dictionary<String, [String]> {
-		return [:]
-	}
+	func makeSection() -> Dictionary<String, [String]> {return [:]}
+	
+	func filter(dataSource: DataSource, searchText: String){}
 	
 }

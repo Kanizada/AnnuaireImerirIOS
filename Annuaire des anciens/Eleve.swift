@@ -46,8 +46,7 @@ class Eleve {
     }
 	
 	// fonction qui créer un objet eleve et qui rempli chaque champs de données avec les données de la base de données
-    func construct(datas: JSON){
-        //TODO with JSON
+	init(json datas: JSON) {
         self.id = datas["id"].intValue
         self.nom = datas["nom"].stringValue
         self.prenom = datas["prenom"].stringValue

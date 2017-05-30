@@ -21,27 +21,26 @@ class ShowEntrepriseViewController: UIViewController, UITableViewDelegate, UITab
 	@IBOutlet weak var relationTable: UITableView!
 	
 	
-	var entrepriseid : Int!
+	var entreprise : Entreprise!
 	var elevesLies: [Eleve] = []
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.navigationController?.setNavigationBarHidden(false, animated: false)
-		let realEntreprise = DSEntreprises.entreprisesList[entrepriseid]!
-		elevesLies = (DSEntreprises.entreprisesList[entrepriseid]?.eleves)!
+		elevesLies = entreprise.eleves
 		
-		nomLabel.text = realEntreprise.nom
-		mailLabel.text = realEntreprise.email
-		fixeLabel.text = realEntreprise.telephone
-		webLabel.text = realEntreprise.site_web
-		adresseLabel.text = realEntreprise.adresse
-		villeLabel.text = realEntreprise.ville
-		postalLabel.text = realEntreprise.code_postal
+		nomLabel.text = entreprise.nom
+		mailLabel.text = entreprise.email
+		fixeLabel.text = entreprise.telephone
+		webLabel.text = entreprise.site_web
+		adresseLabel.text = entreprise.adresse
+		villeLabel.text = entreprise.ville
+		postalLabel.text = entreprise.code_postal
 		
 		relationTable.delegate = self
 		relationTable.dataSource = self
 		
-		print(elevesLies)
+		
 		
 	}
 	

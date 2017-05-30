@@ -23,8 +23,7 @@ class Entreprise {
 	
     var eleves : [Eleve] = []
     
-    func construct(datas: JSON){
-
+	init(json datas: JSON) {
         self.id = datas["id"].intValue
         self.nom = datas["nom"].stringValue
         self.adresse = datas["adresse"].stringValue

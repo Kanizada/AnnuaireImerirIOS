@@ -23,25 +23,24 @@ class ShowEleveViewController: UIViewController, UITableViewDelegate, UITableVie
 	@IBOutlet weak var relationTable: UITableView!
 	
 
-	var eleveid : Int!
+	var eleve : Eleve!
 	var entrepriseLiees: [Entreprise] = []
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.navigationController?.setNavigationBarHidden(false, animated: false)
+						// bind d'un eleve précis dans une constante
+		entrepriseLiees = eleve.entreprises	// bind de la liste des entreprises liées a cet eleve
 		
-		let realEleve = DSEleves.elevesList[eleveid]!					// bind d'un eleve précis dans une constante
-		entrepriseLiees = (DSEleves.elevesList[eleveid]?.entreprises)!	// bind de la liste des entreprises liées a cet eleve
-		
-		nomLabel.text = realEleve.nom									//bind de tous les divers labels d'affichage des données
-		prenomLabel.text = realEleve.prenom
-		mailLabel.text = realEleve.email
-		fixeLabel.text = realEleve.telephone_fixe
-		mobileLabel.text = realEleve.telephone_mobile
-		webLabel.text = realEleve.site_web
-		adresseLabel.text = realEleve.adresse
-		villeLabel.text = realEleve.ville
-		postalLabel.text = realEleve.code_postal
+		nomLabel.text = eleve.nom									//bind de tous les divers labels d'affichage des données
+		prenomLabel.text = eleve.prenom
+		mailLabel.text = eleve.email
+		fixeLabel.text = eleve.telephone_fixe
+		mobileLabel.text = eleve.telephone_mobile
+		webLabel.text = eleve.site_web
+		adresseLabel.text = eleve.adresse
+		villeLabel.text = eleve.ville
+		postalLabel.text = eleve.code_postal
 		
 		relationTable.delegate = self
 		relationTable.dataSource = self

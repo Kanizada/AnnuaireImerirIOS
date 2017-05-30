@@ -102,7 +102,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="dataSource" destination="cSp-DP-OcH" id="ITT-Ul-JIb"/>
-                        <outlet property="eleveSearchBar" destination="4fy-ao-GBC" id="BLL-EQ-z9Y"/>
+                        <outlet property="searchBar" destination="4fy-ao-GBC" id="L8h-Cq-Qw3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDz-0Q-nre" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -124,7 +124,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellEntreprise" textLabel="IHS-hd-0gD" style="IBUITableViewCellStyleDefault" id="krl-uZ-yTI">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="IHS-hd-0gD" style="IBUITableViewCellStyleDefault" id="krl-uZ-yTI">
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="krl-uZ-yTI" id="Fct-Rb-1wz">
@@ -151,7 +151,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="dataSource" destination="F29-WL-gm2" id="36v-GA-dWW"/>
-                        <outlet property="entrepriseSearchBar" destination="lK5-Fv-oht" id="QOn-oc-0Fm"/>
+                        <outlet property="searchBar" destination="lK5-Fv-oht" id="v8Q-3R-NOw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xd7-8O-REk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -560,15 +560,15 @@
             </objects>
             <point key="canvasLocation" x="2839" y="125"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Custom Tab Bar Controller-->
         <scene sceneID="t1n-qu-dYN">
             <objects>
-                <tabBarController autoresizesArchivedViewToFullSize="NO" id="GFE-Tl-fcy" sceneMemberID="viewController">
+                <tabBarController autoresizesArchivedViewToFullSize="NO" id="GFE-Tl-fcy" customClass="CustomTabBarController" customModule="Annuaire_des_anciens" customModuleProvider="target" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="s94-l2-wvM" customClass="ListesNavigationItem" customModule="Annuaire_des_anciens" customModuleProvider="target">
                         <barButtonItem key="leftBarButtonItem" title="Déconnexion" id="xFi-0N-Jqe">
                             <connections>
-                                <action selector="onPressDisconnect:" destination="GFE-Tl-fcy" id="e1y-Zx-A80"/>
+                                <action selector="onPressDisconnect:" destination="GFE-Tl-fcy" id="0o1-NW-53e"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

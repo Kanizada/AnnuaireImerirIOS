@@ -49,17 +49,17 @@ extension String {
 //}
 
 class DSEleves: DataSource{
-    
-    override var url: String { return URLS.elevesList }
-    
+	
     var eleves: [Eleve] = []
-    
-    static var elevesList = [Int:Eleve]()
-    
     var elevesFiltered: [Eleve] = []
-    override var typeData: DataSource.type{return DataSource.type.ELEVE}
-    
+	
+	override var datas : [Any] {return eleves}
+    override var typeData: type{return .ELEVE}
     override var count: Int { return elevesFiltered.isEmpty ? eleves.count : elevesFiltered.count}
+	
+	override func setDatas(datasLoaded: [Any]) {
+		eleves = datasLoaded as! [Eleve]
+	}
 	
 	//fonction qui est appelée lors de l'affichage des données dans le cellForRowAt dans TableViewController
     override func layout(cell: UITableViewCell , indexPath: IndexPath) {
@@ -91,54 +91,42 @@ class DSEleves: DataSource{
 		return dictForTitlesAndRow
 	}
 	
+	override func loadDatas() {
+		let webservice = WebService()
+		self.setDatas(datasLoaded: webservice.loadDataSource(dataSource: self))
+		eleves = eleves.sorted(by: {$0.nom < $1.nom})
+	}
 	
-	//fonction qui permet de remplir un dictionnaire statique avec les id des eleves trouvés sur la base de donnée avec comme value l'eleve et comme clé son ID
-    static func loadList() {
-        let urlStringEleve = URLS.elevesList  + "cptYv2qNjDGHOZRjOmu5sy0gbzKp0ZWdpqbUsCILfos3nkncHShaqiqBSb1SbX6AnhvQUdCaC4e0pBd7tvhUNIvGTxz4vFFTXaJRol21qg1QSfXmKegyXLeQjNVOsAHpKrh9NjaeAc4sr1Obg4JeQY"
-        
-        if let url = URL(string: urlStringEleve) {
-            if let data = try? Data(contentsOf: url) {
-                let json = JSON(data: data)
-                
-                if json["success"].intValue == 1 {
-					if DSEleves.elevesList.isEmpty {
-						for result in json["body"].arrayValue {
-							let newEleve = Eleve()
-							newEleve.construct(datas: result)
-							DSEleves.elevesList.updateValue(newEleve, forKey: newEleve.id)
-						}
-						
-					}
-                }
-            }
-        }
-    }
+	override func prepareForSegue(dataSource: DataSource, segue: UIStoryboardSegue, tableView: UITableView) {
+		if let dest = segue.destination as? ShowEleveViewController {
+			let dsEleves = dataSource as! DSEleves
+			var countElement = 0
+			for i in 0..<tableView.indexPathForSelectedRow!.section {
+				let countRowInSection = tableView.numberOfRows(inSection: i)
+				countElement += countRowInSection
+			}
+			let eleve = dsEleves.eleves[countElement + tableView.indexPathForSelectedRow!.row]
+			dest.eleve = eleve
+		}
+	}
 	
-	//fonction qui appelle la fonction parseData pour parser les eleves de la base de donnée
-    override func loadDatas() {
-        let urlStringEleve = self.url + "cptYv2qNjDGHOZRjOmu5sy0gbzKp0ZWdpqbUsCILfos3nkncHShaqiqBSb1SbX6AnhvQUdCaC4e0pBd7tvhUNIvGTxz4vFFTXaJRol21qg1QSfXmKegyXLeQjNVOsAHpKrh9NjaeAc4sr1Obg4JeQY"   // fin de l'url pour se connecter a la base de donnée
-        
-        if let url = URL(string: urlStringEleve) {
-            if let data = try? Data(contentsOf: url) {
-                let json = JSON(data: data)
-                
-                if json["success"].intValue == 1 {
-                    self.parseDatas(json: json)
-                }
-            }
-        }
-    }
-	
-	//fonction qui pour chaque eleve, rempli les données comme le nom ou le prenom et les trie alphabetiquement
-    override func parseDatas(json: JSON){
-        for result in json["body"].arrayValue {
-            let neweleve = Eleve()
-            neweleve.construct(datas: result)
-            eleves.append(neweleve)
-        }
-        eleves.sort(by: {$0.nom < $1.nom})
-    }
+	override func filter(dataSource: DataSource, searchText: String) {
+		let dsEleve = dataSource as! DSEleves
+		let cleanSearchText = searchText.lowercased()
+		
+		if (searchText != "") {						//Si un texte est entré
+			dsEleve.elevesFiltered = []				//on clean le tableau des données filtrées
+			for eleve: Eleve in dsEleve.eleves {	//rajout des données contenant le texte saisi dans les données filtrées
+				if eleve.nom.lowercased().contains(cleanSearchText) {
+					dsEleve.elevesFiltered.append(eleve)
+				}
+			}
+		}
+		else {										//Sinon on clean les données filtrées
+			dsEleve.elevesFiltered = []
+		}
+	}
 	
 	static let sharedEleve = DSEleves()
-    
+	
 }

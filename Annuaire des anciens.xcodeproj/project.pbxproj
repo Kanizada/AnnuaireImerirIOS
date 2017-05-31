@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F1DF76E1EDE1DD8006F14B9 /* Annuaire_des_anciens_UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1DF76D1EDE1DD8006F14B9 /* Annuaire_des_anciens_UnitTests.swift */; };
+		3F1DF77E1EDEC150006F14B9 /* Annuaire_des_anciensTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1DF77D1EDEC150006F14B9 /* Annuaire_des_anciensTests.swift */; };
 		3F4FB0501EDCE28A0003F048 /* ShowEntrepriseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4FB04F1EDCE28A0003F048 /* ShowEntrepriseViewController.swift */; };
 		3F4FB0761EDD9DDA0003F048 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4FB0751EDD9DDA0003F048 /* WebService.swift */; };
 		3F6E1C401E6F2EA2007EE65C /* DSEleves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E1C3F1E6F2EA2007EE65C /* DSEleves.swift */; };
@@ -32,6 +34,23 @@
 		9D3F33B9B2789106BEA85E68 /* Pods_Annuaire_des_anciens.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D3C19C4B7BFF4F0C8B73AAF /* Pods_Annuaire_des_anciens.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3F1DF7701EDE1DD8006F14B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F9E5D751E6D933300FE67BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F9E5D7C1E6D933300FE67BB;
+			remoteInfo = "Annuaire des anciens";
+		};
+		3F1DF7801EDEC150006F14B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F9E5D751E6D933300FE67BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F9E5D7C1E6D933300FE67BB;
+			remoteInfo = "Annuaire des anciens";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		3F9144301E6F206E00E89CAA /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -48,6 +67,13 @@
 
 /* Begin PBXFileReference section */
 		3E49C50534DEE091AC423196 /* Pods-Annuaire des anciens.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Annuaire des anciens.release.xcconfig"; path = "Pods/Target Support Files/Pods-Annuaire des anciens/Pods-Annuaire des anciens.release.xcconfig"; sourceTree = "<group>"; };
+		3F1DF76B1EDE1DD8006F14B9 /* Annuaire des anciens-UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Annuaire des anciens-UnitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F1DF76D1EDE1DD8006F14B9 /* Annuaire_des_anciens_UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annuaire_des_anciens_UnitTests.swift; sourceTree = "<group>"; };
+		3F1DF76F1EDE1DD8006F14B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F1DF7751EDEBF4F006F14B9 /* Pods_Annuaire_des_anciens.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Annuaire_des_anciens.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Annuaire_des_anciens-gbotkhqdqfqavacwgczynwuiiwzf/Build/Products/Debug-iphonesimulator/Pods_Annuaire_des_anciens.framework"; sourceTree = "<group>"; };
+		3F1DF77B1EDEC150006F14B9 /* Annuaire des anciensTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Annuaire des anciensTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F1DF77D1EDEC150006F14B9 /* Annuaire_des_anciensTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annuaire_des_anciensTests.swift; sourceTree = "<group>"; };
+		3F1DF77F1EDEC150006F14B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F4FB04F1EDCE28A0003F048 /* ShowEntrepriseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowEntrepriseViewController.swift; sourceTree = "<group>"; };
 		3F4FB0751EDD9DDA0003F048 /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		3F6E1C3F1E6F2EA2007EE65C /* DSEleves.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSEleves.swift; sourceTree = "<group>"; };
@@ -76,6 +102,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3F1DF7681EDE1DD8006F14B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F1DF7781EDEC150006F14B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3F9E5D7A1E6D933300FE67BB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -88,6 +128,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F1DF76C1EDE1DD8006F14B9 /* Annuaire des anciens-UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				3F1DF76D1EDE1DD8006F14B9 /* Annuaire_des_anciens_UnitTests.swift */,
+				3F1DF76F1EDE1DD8006F14B9 /* Info.plist */,
+			);
+			path = "Annuaire des anciens-UnitTests";
+			sourceTree = "<group>";
+		};
+		3F1DF77C1EDEC150006F14B9 /* Annuaire des anciensTests */ = {
+			isa = PBXGroup;
+			children = (
+				3F1DF77D1EDEC150006F14B9 /* Annuaire_des_anciensTests.swift */,
+				3F1DF77F1EDEC150006F14B9 /* Info.plist */,
+			);
+			path = "Annuaire des anciensTests";
+			sourceTree = "<group>";
+		};
 		3F6E1C3E1E6F2E5D007EE65C /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +183,8 @@
 				77EAF0F31EC1997300E016B2 /* GoogleService-Info.plist */,
 				3FA8238A1E97E6630087F5E9 /* SwiftyJSON.framework */,
 				3F9E5D7F1E6D933300FE67BB /* Annuaire des anciens */,
+				3F1DF76C1EDE1DD8006F14B9 /* Annuaire des anciens-UnitTests */,
+				3F1DF77C1EDEC150006F14B9 /* Annuaire des anciensTests */,
 				3F9E5D7E1E6D933300FE67BB /* Products */,
 				74C39FC94F4B577C6A1F5E43 /* Pods */,
 				612A5EFDD1D7A37AC5C2260B /* Frameworks */,
@@ -135,6 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				3F9E5D7D1E6D933300FE67BB /* Annuaire des anciens.app */,
+				3F1DF76B1EDE1DD8006F14B9 /* Annuaire des anciens-UnitTests.xctest */,
+				3F1DF77B1EDEC150006F14B9 /* Annuaire des anciensTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,6 +232,7 @@
 		612A5EFDD1D7A37AC5C2260B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3F1DF7751EDEBF4F006F14B9 /* Pods_Annuaire_des_anciens.framework */,
 				8D3C19C4B7BFF4F0C8B73AAF /* Pods_Annuaire_des_anciens.framework */,
 			);
 			name = Frameworks;
@@ -187,6 +250,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3F1DF76A1EDE1DD8006F14B9 /* Annuaire des anciens-UnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F1DF7741EDE1DD8006F14B9 /* Build configuration list for PBXNativeTarget "Annuaire des anciens-UnitTests" */;
+			buildPhases = (
+				3F1DF7671EDE1DD8006F14B9 /* Sources */,
+				3F1DF7681EDE1DD8006F14B9 /* Frameworks */,
+				3F1DF7691EDE1DD8006F14B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F1DF7711EDE1DD8006F14B9 /* PBXTargetDependency */,
+			);
+			name = "Annuaire des anciens-UnitTests";
+			productName = "Annuaire des anciens-UnitTests";
+			productReference = 3F1DF76B1EDE1DD8006F14B9 /* Annuaire des anciens-UnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3F1DF77A1EDEC150006F14B9 /* Annuaire des anciensTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F1DF7821EDEC150006F14B9 /* Build configuration list for PBXNativeTarget "Annuaire des anciensTests" */;
+			buildPhases = (
+				3F1DF7771EDEC150006F14B9 /* Sources */,
+				3F1DF7781EDEC150006F14B9 /* Frameworks */,
+				3F1DF7791EDEC150006F14B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F1DF7811EDEC150006F14B9 /* PBXTargetDependency */,
+			);
+			name = "Annuaire des anciensTests";
+			productName = "Annuaire des anciensTests";
+			productReference = 3F1DF77B1EDEC150006F14B9 /* Annuaire des anciensTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		3F9E5D7C1E6D933300FE67BB /* Annuaire des anciens */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F9E5D8F1E6D933300FE67BB /* Build configuration list for PBXNativeTarget "Annuaire des anciens" */;
@@ -214,10 +313,22 @@
 		3F9E5D751E6D933300FE67BB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Student;
 				TargetAttributes = {
+					3F1DF76A1EDE1DD8006F14B9 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = Y5RE7SNG4J;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3F9E5D7C1E6D933300FE67BB;
+					};
+					3F1DF77A1EDEC150006F14B9 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = Y5RE7SNG4J;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3F9E5D7C1E6D933300FE67BB;
+					};
 					3F9E5D7C1E6D933300FE67BB = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 8BNRNG4PCS;
@@ -240,11 +351,27 @@
 			projectRoot = "";
 			targets = (
 				3F9E5D7C1E6D933300FE67BB /* Annuaire des anciens */,
+				3F1DF76A1EDE1DD8006F14B9 /* Annuaire des anciens-UnitTests */,
+				3F1DF77A1EDEC150006F14B9 /* Annuaire des anciensTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3F1DF7691EDE1DD8006F14B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F1DF7791EDEC150006F14B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3F9E5D7B1E6D933300FE67BB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -307,6 +434,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3F1DF7671EDE1DD8006F14B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F1DF76E1EDE1DD8006F14B9 /* Annuaire_des_anciens_UnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F1DF7771EDEC150006F14B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F1DF77E1EDEC150006F14B9 /* Annuaire_des_anciensTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3F9E5D791E6D933300FE67BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -332,6 +475,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		3F1DF7711EDE1DD8006F14B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F9E5D7C1E6D933300FE67BB /* Annuaire des anciens */;
+			targetProxy = 3F1DF7701EDE1DD8006F14B9 /* PBXContainerItemProxy */;
+		};
+		3F1DF7811EDEC150006F14B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F9E5D7C1E6D933300FE67BB /* Annuaire des anciens */;
+			targetProxy = 3F1DF7801EDEC150006F14B9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		3F9E5D841E6D933300FE67BB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -352,6 +508,70 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3F1DF7721EDE1DD8006F14B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = Y5RE7SNG4J;
+				INFOPLIST_FILE = "Annuaire des anciens-UnitTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.imerir.Annuaire-des-anciens-UnitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Annuaire des anciens.app/Annuaire des anciens";
+			};
+			name = Debug;
+		};
+		3F1DF7731EDE1DD8006F14B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = Y5RE7SNG4J;
+				INFOPLIST_FILE = "Annuaire des anciens-UnitTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.imerir.Annuaire-des-anciens-UnitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Annuaire des anciens.app/Annuaire des anciens";
+			};
+			name = Release;
+		};
+		3F1DF7831EDEC150006F14B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = Y5RE7SNG4J;
+				INFOPLIST_FILE = "Annuaire des anciensTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.imerir.Annuaire-des-anciensTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Annuaire des anciens.app/Annuaire des anciens";
+			};
+			name = Debug;
+		};
+		3F1DF7841EDEC150006F14B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = Y5RE7SNG4J;
+				INFOPLIST_FILE = "Annuaire des anciensTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.imerir.Annuaire-des-anciensTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Annuaire des anciens.app/Annuaire des anciens";
+			};
+			name = Release;
+		};
 		3F9E5D8D1E6D933300FE67BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -493,6 +713,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3F1DF7741EDE1DD8006F14B9 /* Build configuration list for PBXNativeTarget "Annuaire des anciens-UnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F1DF7721EDE1DD8006F14B9 /* Debug */,
+				3F1DF7731EDE1DD8006F14B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3F1DF7821EDEC150006F14B9 /* Build configuration list for PBXNativeTarget "Annuaire des anciensTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F1DF7831EDEC150006F14B9 /* Debug */,
+				3F1DF7841EDEC150006F14B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		3F9E5D781E6D933300FE67BB /* Build configuration list for PBXProject "Annuaire des anciens" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

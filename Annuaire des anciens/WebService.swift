@@ -18,12 +18,11 @@ enum type {
 class WebService {
 	
 	struct URLS {
-		static let elevesList = "http://vps366535.ovh.net/api/eleves/list/"				//début des différentes routes pour acceder
-		static let entreprisesList = "http://vps366535.ovh.net/api/entreprises/list/"	// a la base de données
-		static let promotionsList = "http://vps366535.ovh.net/api/promotions/list/"
-		static let relationsList = "http://vps366535.ovh.net/api/relations/list/"
+		static let elevesList = "http://vps366535.ovh.net/api/eleves/cptYv2qNjDGHOZRjOmu5sy0gbzKp0ZWdpqbUsCILfos3nkncHShaqiqBSb1SbX6AnhvQUdCaC4e0pBd7tvhUNIvGTxz4vFFTXaJRol21qg1QSfXmKegyXLeQjNVOsAHpKrh9NjaeAc4sr1Obg4JeQY"				//début des différentes routes pour acceder
+		static let entreprisesList = "http://vps366535.ovh.net/api/entreprises/cptYv2qNjDGHOZRjOmu5sy0gbzKp0ZWdpqbUsCILfos3nkncHShaqiqBSb1SbX6AnhvQUdCaC4e0pBd7tvhUNIvGTxz4vFFTXaJRol21qg1QSfXmKegyXLeQjNVOsAHpKrh9NjaeAc4sr1Obg4JeQY"	// a la base de données
+		static let promotionsList = "http://vps366535.ovh.net/api/promotions/cptYv2qNjDGHOZRjOmu5sy0gbzKp0ZWdpqbUsCILfos3nkncHShaqiqBSb1SbX6AnhvQUdCaC4e0pBd7tvhUNIvGTxz4vFFTXaJRol21qg1QSfXmKegyXLeQjNVOsAHpKrh9NjaeAc4sr1Obg4JeQY"
+		static let relationsList = "http://vps366535.ovh.net/api/relations/cptYv2qNjDGHOZRjOmu5sy0gbzKp0ZWdpqbUsCILfos3nkncHShaqiqBSb1SbX6AnhvQUdCaC4e0pBd7tvhUNIvGTxz4vFFTXaJRol21qg1QSfXmKegyXLeQjNVOsAHpKrh9NjaeAc4sr1Obg4JeQY"
 	}
-	private let key = "cptYv2qNjDGHOZRjOmu5sy0gbzKp0ZWdpqbUsCILfos3nkncHShaqiqBSb1SbX6AnhvQUdCaC4e0pBd7tvhUNIvGTxz4vFFTXaJRol21qg1QSfXmKegyXLeQjNVOsAHpKrh9NjaeAc4sr1Obg4JeQY"
 	
 	func loadDataSource(dataSource: DataSource)->[Any]{
 		
@@ -62,7 +61,7 @@ class WebService {
 	private func getEntreprises()->([Int:Entreprise]){
 		
 		var dict = [Int:Entreprise]()
-		if let url = URL(string: URLS.entreprisesList + key) {
+		if let url = URL(string: URLS.entreprisesList) {
 			if let data = try? Data(contentsOf: url) {
 				let json = JSON(data: data)
 				
@@ -82,7 +81,7 @@ class WebService {
 	private func getEleves()->([Int:Eleve]){
 		
 		var dict = [Int:Eleve]()
-		if let url = URL(string: URLS.elevesList + key) {
+		if let url = URL(string: URLS.elevesList) {
 			if let data = try? Data(contentsOf: url) {
 				let json = JSON(data: data)
 				
@@ -100,7 +99,7 @@ class WebService {
 	}
 	
 	private func addRelation(eleves: inout [Int:Eleve], entreprises: inout [Int:Entreprise]){
-		if let url = URL(string: URLS.relationsList + key) {
+		if let url = URL(string: URLS.relationsList) {
 			if let data = try? Data(contentsOf: url) {
 				let json = JSON(data: data)
 				

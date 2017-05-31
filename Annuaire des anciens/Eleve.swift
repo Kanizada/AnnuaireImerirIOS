@@ -61,15 +61,20 @@ class Eleve {
 	
 	func getArray()->[[String]]{
 		var eleve: [[String]] = []
-		eleve.append([self.nom])
-		eleve.append([self.prenom])
-		eleve.append([self.email])
-		eleve.append([self.telephone_mobile])
-		eleve.append([self.telephone_fixe])
-		eleve.append([self.site_web])
-		eleve.append([self.adresse])
-		eleve.append([self.code_postal])
-		eleve.append([self.ville])
+        eleve.append([])
+		eleve[0].append(self.nom)
+		eleve[0].append(self.prenom)
+		eleve[0].append(self.email)
+		eleve[0].append(self.telephone_mobile)
+		eleve[0].append(self.telephone_fixe)
+		eleve[0].append(self.site_web)
+		eleve[0].append(self.adresse)
+		eleve[0].append(self.code_postal)
+		eleve[0].append(self.ville)
+        eleve.append([])
+        for entreprise: Entreprise in entreprises {
+            eleve[1].append(entreprise.nom)
+        }
 		//Pour les eleves
 		//entreprise.append(contentOf: entreprise.eleves)
 		return eleve

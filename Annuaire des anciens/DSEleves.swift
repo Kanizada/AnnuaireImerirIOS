@@ -82,10 +82,10 @@ class DSEleves: DataSource{
 		
 		for eleve in dataForSection {
 			if dictForTitlesAndRow.keys.contains(eleve.nom[0].uppercased()) {
-				dictForTitlesAndRow[eleve.nom[0].uppercased()]!.append(eleve.nom)
+				dictForTitlesAndRow[eleve.nom[0].uppercased()]!.append(eleve.nom + " " + eleve.prenom)
 			}
 			else {
-				dictForTitlesAndRow.updateValue([eleve.nom], forKey: eleve.nom[0].uppercased())
+				dictForTitlesAndRow.updateValue([eleve.nom + " " + eleve.prenom], forKey: eleve.nom[0].uppercased())
 			}
 		}
 		return dictForTitlesAndRow
@@ -98,7 +98,7 @@ class DSEleves: DataSource{
 	}
 	
 	override func prepareForSegue(dataSource: DataSource, segue: UIStoryboardSegue, tableView: UITableView) {
-		if let dest = segue.destination as? ShowEleveViewController {
+		if let dest = segue.destination as? EleveDetailTableViewController {
 			let dsEleves = dataSource as! DSEleves
 			var countElement = 0
 			for i in 0..<tableView.indexPathForSelectedRow!.section {

@@ -27,12 +27,19 @@ class EntrepriseDetailTableViewController: UITableViewController {
     // MARK: - Table view data source
 
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		return self.sectionTitle[section]
+        switch section {
+        case 0:
+            return "Informations"
+        case 1:
+            return "Eleves"
+        default:
+            return "#@*!"
+        }
 	}
 	
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return self.sectionTitle.count
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,10 +49,15 @@ class EntrepriseDetailTableViewController: UITableViewController {
 
 	
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "entrepriseCell", for: indexPath)
-
-		cell.textLabel?.text = self.entrepriseOnTable[indexPath.section][indexPath.row]
-
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "simpleCell", for: indexPath)
+        if indexPath.section == 0 {
+            cell.textLabel?.text = self.sectionTitle[indexPath.row]
+            cell.detailTextLabel?.text = self.entrepriseOnTable[indexPath.section][indexPath.row]
+        } else {
+            cell.textLabel?.text = self.entrepriseOnTable[indexPath.section][indexPath.row]
+            cell.detailTextLabel?.text = ""
+        }
         return cell
     }
 

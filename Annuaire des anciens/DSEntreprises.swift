@@ -62,7 +62,7 @@ class DSEntreprises: DataSource {
 	}
 	
 	override func prepareForSegue(dataSource: DataSource, segue: UIStoryboardSegue, tableView: UITableView) {
-		if let dest = segue.destination as? ShowEntrepriseViewController {
+		if let dest = segue.destination as? EntrepriseDetailTableViewController {
 			let dsEntreprise = dataSource as! DSEntreprises
 			var countElement = 0
 			for i in 0..<tableView.indexPathForSelectedRow!.section{

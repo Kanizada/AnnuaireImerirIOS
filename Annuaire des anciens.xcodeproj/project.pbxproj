@@ -706,6 +706,7 @@
 				3F1DF7731EDE1DD8006F14B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F1DF7821EDEC150006F14B9 /* Build configuration list for PBXNativeTarget "Annuaire des anciensTests" */ = {
 			isa = XCConfigurationList;
@@ -714,6 +715,7 @@
 				3F1DF7841EDEC150006F14B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F9E5D781E6D933300FE67BB /* Build configuration list for PBXProject "Annuaire des anciens" */ = {
 			isa = XCConfigurationList;

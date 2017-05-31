@@ -12,7 +12,7 @@ class EleveDetailTableViewController: UITableViewController {
 	
 	var eleve: Eleve!
 	
-	let sectionTitle = ["Nom", "Prénom","Email", "Téléphone mobile", "Telephone fixe", "Site web", "Adresse", "Code postal", "Ville"]
+	let sectionTitle = ["Nom", "Prénom","Email", "Téléphone mobile", "Telephone fixe", "Site web", "Adresse", "Code postal", "Ville", "Entreprise"]
 	
 	var eleveOnTable : [[String]] = []
 
@@ -29,12 +29,19 @@ class EleveDetailTableViewController: UITableViewController {
     }
 
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		return self.sectionTitle[section]
+        switch section {
+        case 0:
+            return "Informations"
+        case 1:
+            return "Entreprises"
+        default:
+            return "#@*!"
+        }
 	}
 	
 	override func numberOfSections(in tableView: UITableView) -> Int {
 		// #warning Incomplete implementation, return the number of sections
-		return self.sectionTitle.count
+		return 2
 	}
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,11 +51,18 @@ class EleveDetailTableViewController: UITableViewController {
 	
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "eleveCell", for: indexPath)
-		
-		cell.textLabel?.text = self.eleveOnTable[indexPath.section][indexPath.row]
-		
-		return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "simpleCell", for: indexPath)
+        if indexPath.section == 0 {
+            cell.textLabel?.text = self.sectionTitle[indexPath.row]
+            cell.detailTextLabel?.text = self.eleveOnTable[indexPath.section][indexPath.row]
+        } else {
+            cell.textLabel?.text = self.eleveOnTable[indexPath.section][indexPath.row]
+            cell.detailTextLabel?.text = ""
+        }
+        return cell
+        
+//		let cell = tableView.dequeueReusableCell(withIdentifier: "eleveCell", for: indexPath)
+//		cell.textLabel?.text = self.eleveOnTable[indexPath.section][indexPath.row]
 	}
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
